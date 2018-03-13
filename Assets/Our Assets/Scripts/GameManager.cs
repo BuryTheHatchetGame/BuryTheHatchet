@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+	public bool bountyActive;
+
 	public int playerCashAmount;
 	public Text playerCashAmountText;
 
@@ -37,5 +39,21 @@ public class GameManager : MonoBehaviour {
 //		int cashAmmount = 2;
 //		addCash (cashAmmount);
 //	}
+
+	void bountyAvailableCheck(){
+		if (bountyActive = false) {
+			//bountyAvailable
+		}
+
+	}
+
+	public void bountyAccepted(){
+		bountyActive = true;
+	}
+
+	public void bountyComplete(){
+		bountyActive = false;
+	}
+
 
 }
