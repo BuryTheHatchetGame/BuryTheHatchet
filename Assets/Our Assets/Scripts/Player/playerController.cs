@@ -6,6 +6,12 @@ public class playerController : MonoBehaviour
 {
     [Header("Player Variables")]
     public float movementSpeed;
+    public Rigidbody rb;
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     public void Update()
     {
@@ -16,7 +22,7 @@ public class playerController : MonoBehaviour
     {
         #region MoveLeft
         // LEFT MOVEMENT //
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Debug.Log("Moving Left...");
             transform.position += Vector3.left.normalized * movementSpeed * Time.deltaTime;
@@ -37,7 +43,7 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             Debug.Log("Moving Upwards...");
-            transform.position += Vector3.forward.normalized * movementSpeed * Time.deltaTime ;
+            transform.position += Vector3.forward.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
 
@@ -51,4 +57,5 @@ public class playerController : MonoBehaviour
         #endregion
 
     }
+
 }
