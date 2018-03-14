@@ -8,6 +8,8 @@ TagManager:
   - HealthPack
   - BountyBoard
   - Enemy
+  - EnemyGun
+  - PlayerGun
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Bounty_Jill
   m_EditorClassIdentifier: 
   bountyName: Jill
-  bountyDescription: He is Dope
+  bountyDescription: SHe is Dope
   bountyImage: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
   bountyRewardAmount: 25
   bountyTarget: {fileID: 1607730248061492, guid: 5f81a661aa6edbe4493c5a706c04efc2,
