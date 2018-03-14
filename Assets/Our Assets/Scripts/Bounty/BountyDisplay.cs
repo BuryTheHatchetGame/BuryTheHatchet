@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BountyDisplay : MonoBehaviour {
 
+	private GameObject GM;
+
 	public Bounty bounty;
 
 	private int currentBountyListNum = 0;
@@ -15,7 +17,7 @@ public class BountyDisplay : MonoBehaviour {
 	public Image bountyImage;
 
 	public Text bountyRewardText;
-	//public int rewardFrom
+	public int rewardFromBounty;
 	public GameObject targetBounty;
 
 	private Vector3 spawnLocation;
@@ -27,6 +29,7 @@ public class BountyDisplay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentBounty ();
+		GM = GameObject.FindGameObjectWithTag ("GameController");
 	}
 	
 	 void currentBounty(){
@@ -38,6 +41,7 @@ public class BountyDisplay : MonoBehaviour {
 		bountyImage.sprite = bounty.bountyImage;
 
 		bountyRewardText.text = bounty.bountyRewardAmount.ToString();
+		rewardFromBounty = bounty.bountyRewardAmount;
 
 		spawnLocation = bounty.spawnBountyLocation;
 		targetBounty = bounty.bountyTarget;
@@ -60,9 +64,12 @@ public class BountyDisplay : MonoBehaviour {
 
 	}
 
-	public void nextBounty(){
+	public void createNextBounty(){
 		if (currentBountyListNum >= 0) {
-			currentBountyListNum = currentBountyListNum + 1;
+			//currentBountyListNum = currentBountyListNum + 1;
+			GM.GetComponent<GameManager>().addCash(rewardFromBounty);
+			currentBountyListNum++;
+			Debug.Log (currentBountyListNum);
 			currentBounty ();
 		}
 	}

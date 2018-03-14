@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
 	public void addCash(int addCashAmmount){
 
 		playerCashAmount = playerCashAmount + addCashAmmount;
+		playerCashAmountText.text = "cash amount: " + playerCashAmount.ToString ();
 
 	}
 
