@@ -23,8 +23,10 @@ public class weaponController : MonoBehaviour
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
 
-        // DEBUG - PLA
+        // DEBUG - DELETE LATER //
         Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount);
+
+        reloadPanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -59,6 +61,7 @@ public class weaponController : MonoBehaviour
             clipAmount = 0;
 
             // SHOW RELOAD UI HERE //
+            reloadPanel.SetActive(true);
 
             Debug.Log("OUT OF AMMO...");
         }
@@ -70,9 +73,12 @@ public class weaponController : MonoBehaviour
         if (clipAmount == 0)
         {
             if (Input.GetKeyDown(KeyCode.R))
-            {// Reload Weapon //
+            {
+                // Reload Weapon //
                 Debug.Log("RELOADING...");
                 clipAmount = weapon.weaponClipAmount;
+
+                reloadPanel.SetActive(false);
             }
         }
 
