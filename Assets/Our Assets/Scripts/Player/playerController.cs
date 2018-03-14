@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour
         // LEFT MOVEMENT //
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("Moving Left...");
+            //Debug.Log("Moving Left...");
             transform.position += Vector3.left.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour
         // RIGHT MOVEMENT //
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("Moving Right...");
+            //Debug.Log("Moving Right...");
             transform.position += Vector3.right.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
@@ -42,7 +42,7 @@ public class playerController : MonoBehaviour
         // UPWARD MOVEMENT //
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            Debug.Log("Moving Upwards...");
+            //Debug.Log("Moving Upwards...");
             transform.position += Vector3.forward.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
         // DOWNWARD MOVEMENT //
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            Debug.Log("Moving Downwards...");
+            //Debug.Log("Moving Downwards...");
             transform.position += Vector3.back.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion

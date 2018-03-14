@@ -15,12 +15,15 @@ public class weaponController : MonoBehaviour
 
     public float bulletSpeed = 10;
 
+    public GameObject reloadPanel;
+
 	// Use this for initialization
 	void Start ()
     {
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
 
+        // DEBUG - PLA
         Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount);
 	}
 	
@@ -35,7 +38,7 @@ public class weaponController : MonoBehaviour
 
     public void ShootGun()
     {
-        // If left click - Shoot // 
+        // Left Click to Shoot  // 
         if (Input.GetMouseButtonDown(0))
         {
             // PARTICLE EFFECT HERE //
@@ -50,6 +53,7 @@ public class weaponController : MonoBehaviour
 
         }
 
+        // EMPTY GUN //
         if (clipAmount <= 0)
         {
             clipAmount = 0;
@@ -66,7 +70,7 @@ public class weaponController : MonoBehaviour
         if (clipAmount == 0)
         {
             if (Input.GetKeyDown(KeyCode.R))
-            {
+            {// Reload Weapon //
                 Debug.Log("RELOADING...");
                 clipAmount = weapon.weaponClipAmount;
             }
@@ -76,12 +80,14 @@ public class weaponController : MonoBehaviour
 
     public void SpawnBullet()
     {
-
+        // DEBUG - REMOVE LATER //
         Debug.Log("Bullet Moving...");
 
+        // Spawn Bullet + Add Force //
         GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
         Bullet.GetComponent<Rigidbody>().AddForce(barrel.transform.right * bulletSpeed, ForceMode.Impulse);
 
+        // Destroy Bullet After 3 Seconds //
         Destroy(Bullet, 3f);
 
     }
