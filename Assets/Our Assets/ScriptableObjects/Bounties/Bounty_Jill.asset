@@ -9,9 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fddc2ff6e03ddf4ab49a8d8bd9108ee, type: 3}
-  m_Name: Bounty_01
+  m_Name: Bounty_Jill
   m_EditorClassIdentifier: 
-  bountyName: Ben
-  bountyDescription: Catch Him
-  bountyImage: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-  bountyRewardAmount: 5
+  bountyName: Jill
+  bountyDescription: He is Dope
+  bountyImage: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  bountyRewardAmount: 25
+  bountyTarget: {fileID: 1607730248061492, guid: 5f81a661aa6edbe4493c5a706c04efc2,
+    type: 2}
+  spawnBountyLocation: {x: 7, y: 0, z: 0}

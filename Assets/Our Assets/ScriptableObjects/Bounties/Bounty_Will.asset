@@ -9,9 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fddc2ff6e03ddf4ab49a8d8bd9108ee, type: 3}
-  m_Name: Bounty_02
+  m_Name: Bounty_Will
   m_EditorClassIdentifier: 
-  bountyName: Owen
+  bountyName: Will
   bountyDescription: He is Dope
   bountyImage: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
   bountyRewardAmount: 25
+  bountyTarget: {fileID: 1972202421867432, guid: ce5c29aa12d9ff74b893a9f73117a4af,
+    type: 2}
+  spawnBountyLocation: {x: 9, y: 0, z: 0}

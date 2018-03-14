@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cactus
   - HealthPack
+  - BountyBoard
   layers:
   - Default
   - TransparentFX

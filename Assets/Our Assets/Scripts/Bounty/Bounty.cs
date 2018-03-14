@@ -12,6 +12,10 @@ public class Bounty : ScriptableObject {
 
 	public int bountyRewardAmount;
 
+	public GameObject bountyTarget;
+
+	public Vector3 spawnBountyLocation;
+
 	public void Print(){
 		Debug.Log (bountyName + " " + bountyDescription + " Reward: " + bountyRewardAmount);
 	}
