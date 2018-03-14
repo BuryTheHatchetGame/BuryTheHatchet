@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da95bdcb0f3268643966ac664744fd3b, type: 3}
-  m_Name: Revolver
+  m_Name: Rifle
   m_EditorClassIdentifier: 
-  weaponName: Revolver
-  weaponDescription: Bang Bang
+  weaponName: Rifle
+  weaponDescription: Pew Pew
   weaponImage: {fileID: 0}
-  weaponDamageAmount: 5
+  weaponDamageAmount: 10
   weaponCostAmount: 10
-  weaponClipAmount: 6
+  weaponClipAmount: 15
