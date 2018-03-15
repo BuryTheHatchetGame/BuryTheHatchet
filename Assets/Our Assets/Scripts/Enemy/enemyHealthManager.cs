@@ -8,13 +8,15 @@ public class enemyHealthManager : MonoBehaviour
     public float startingHealth = 100f;
     public float health;
 
+	private GameObject GM;
+
 
 
 	// Use this for initialization
 	void Start ()
     {
-		
         health = startingHealth;
+		GM = GameObject.FindGameObjectWithTag ("GameController");
 	}
 	
 	// Update is called once per frame
@@ -48,5 +50,6 @@ public class enemyHealthManager : MonoBehaviour
     {
         Debug.Log("Dead");
         Destroy(this.gameObject);
+		GM.GetComponent<GameManager> ().resetEnemyControllerLists ();
     }
 }

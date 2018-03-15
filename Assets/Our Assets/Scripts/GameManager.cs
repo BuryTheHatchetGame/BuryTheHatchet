@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public bool bountyActive;
-
+	public GameObject[] enemyControllers;
 	public int playerCashAmount;
 	public Text playerCashAmountText;
 
@@ -14,9 +14,10 @@ public class GameManager : MonoBehaviour {
 	public Text playerCurrentAmmoAmountText;
 
 
+
 	// Use this for initialization
 	void Start () {
-		
+		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
 	}
 	
 	// Update is called once per frame
@@ -57,4 +58,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 
+	public void resetEnemyControllerLists(){
+
+		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemyControllers) {
+			enemy.GetComponent<tempEnemyController> ().resetList ();
+		}
+
+
+	}
 }
