@@ -238,27 +238,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e83504f9bdacaa468f1a54477022d56, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &101229480 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1911169155585128, guid: 15410e70970e6da46b31076945e9a1bc,
+--- !u!114 &101229481 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114802287880461400, guid: f6e106776be2482428b413a065aa936e,
     type: 2}
   m_PrefabInternal: {fileID: 1947355568}
---- !u!114 &101229481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 101229480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 998721189256e1b41b4c8925a0a16bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactButton: {fileID: 0}
-  interactButtonDescription: 
-  toggleBountyBoard: {fileID: 1259307159}
-  KeyToPress: 101
-  player: {fileID: 1079401861}
 --- !u!1 &139414412 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c,
@@ -13972,92 +13957,50 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.437
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalPosition.z
       value: 2.816
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0.70710677
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    - target: {fileID: 4062771258754476, guid: f6e106776be2482428b413a065aa936e, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114351622304699212, guid: 15410e70970e6da46b31076945e9a1bc,
+    - target: {fileID: 114802287880461400, guid: f6e106776be2482428b413a065aa936e,
         type: 2}
-      propertyPath: thePlayer
+      propertyPath: toggleBountyBoard
+      value: 
+      objectReference: {fileID: 1259307159}
+    - target: {fileID: 114802287880461400, guid: f6e106776be2482428b413a065aa936e,
+        type: 2}
+      propertyPath: player
       value: 
       objectReference: {fileID: 1079401861}
-    - target: {fileID: 1911169155585128, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
-      propertyPath: m_Name
-      value: BountyBoardCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 212017518691607422, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212017518691607422, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.45844766
-      objectReference: {fileID: 0}
-    - target: {fileID: 212017518691607422, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.08385599
-      objectReference: {fileID: 0}
-    - target: {fileID: 114351622304699212, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: damageAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1911169155585128, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 4892648370495894, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 65917354468309132, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1.2025235
-      objectReference: {fileID: 0}
-    - target: {fileID: 65917354468309132, guid: 15410e70970e6da46b31076945e9a1bc,
-        type: 2}
-      propertyPath: m_Center.x
-      value: -0.47125208
-      objectReference: {fileID: 0}
-    - target: {fileID: 1506196595099992, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
-      propertyPath: m_Name
-      value: BountyBoard
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114351622304699212, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 15410e70970e6da46b31076945e9a1bc, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f6e106776be2482428b413a065aa936e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2135303502
 GameObject:
