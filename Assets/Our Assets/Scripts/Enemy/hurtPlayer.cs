@@ -10,6 +10,7 @@ public class hurtPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		thePlayer = GameObject.FindGameObjectWithTag ("Player");
         thePlayer.GetComponent<playerHealthMananger>();
     }
 
