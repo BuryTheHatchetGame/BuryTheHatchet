@@ -48,7 +48,6 @@ public class tempEnemyController : MonoBehaviour
 //			nma.SetDestination (playerT.position);
 //		}
 
-		
 	}
 
     private void OnDrawGizmosSelected()
@@ -74,6 +73,7 @@ public class tempEnemyController : MonoBehaviour
 	void AvoidOtherEnemies(){
 		Vector3 EnemyT;
 
+		//checks the distance between this.gameobject and every other gameobject tagged "Enemy".
 		foreach (GameObject enemy in enemyList) {
 			EnemyT = enemy.transform.position;
 			if (Vector3.Distance (transform.position, EnemyT) < enemyAvoidDistance) {
@@ -82,13 +82,15 @@ public class tempEnemyController : MonoBehaviour
 		}
 	}
 			
-
+	//
 	public void resetList(){
 		enemyList = new List <GameObject> ();
 		enemyList.Clear ();
-//		addToEnemyList ();
+		addToEnemyList ();
 	}
 
+
+	//adds GameObjects tagged with "Enemy" to the enemyList.
 	void addToEnemyList(){
 		enemyList.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 	}
