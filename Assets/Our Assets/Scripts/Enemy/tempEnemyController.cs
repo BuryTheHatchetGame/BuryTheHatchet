@@ -27,6 +27,9 @@ public class tempEnemyController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+			enemyList.Add (enemy);
+		}
 //		nma = GetComponent<NavMeshAgent> ();
 		//addToEnemyList();
 		playerGO = GameObject.FindGameObjectWithTag("Player");
@@ -36,8 +39,9 @@ public class tempEnemyController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		MoveTowardsPlayerEnemyMovement ();
 		AvoidOtherEnemies ();
+		MoveTowardsPlayerEnemyMovement ();
+
 
 //		transform.rotation = Quaternion.Euler (lockPos, lockPos, lockPos);
 //
