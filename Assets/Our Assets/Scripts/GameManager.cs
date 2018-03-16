@@ -67,4 +67,13 @@ public class GameManager : MonoBehaviour {
 
 
 	}
+
+	public void removeEnemyFromList(GameObject currentRemoval){
+		GameObject toRemove = currentRemoval;
+		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemyControllers) {
+			enemy.GetComponent<tempEnemyController> ().removeFromList (toRemove);
+		}
+
+	}
 }

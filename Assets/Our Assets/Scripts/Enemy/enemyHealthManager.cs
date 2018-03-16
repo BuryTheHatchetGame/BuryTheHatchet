@@ -12,6 +12,7 @@ public class enemyHealthManager : MonoBehaviour
 
 
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -48,8 +49,13 @@ public class enemyHealthManager : MonoBehaviour
 
     public void Die()
     {
+		GameObject currentRemoval = this.gameObject;
+
         Debug.Log("Dead");
+		GM.GetComponent<GameManager> ().removeEnemyFromList (currentRemoval);
         Destroy(this.gameObject);
+
+		//this calls upon the function found in Game Manager to reset the enemyLists
 		GM.GetComponent<GameManager> ().resetEnemyControllerLists ();
     }
 }

@@ -38,6 +38,7 @@ public class tempEnemyController : MonoBehaviour
 	{
 		MoveTowardsPlayerEnemyMovement ();
 		AvoidOtherEnemies ();
+
 //		transform.rotation = Quaternion.Euler (lockPos, lockPos, lockPos);
 //
 //		if (Vector3.Distance (playerT.position, transform.position) <= radiusSize) 
@@ -84,14 +85,22 @@ public class tempEnemyController : MonoBehaviour
 			
 	//
 	public void resetList(){
-		enemyList = new List <GameObject> ();
-		enemyList.Clear ();
-		addToEnemyList ();
+		//enemyList = new List <GameObject> ();
+		//enemyList.Clear();
+		//addToEnemyList ();
 	}
 
 
 	//adds GameObjects tagged with "Enemy" to the enemyList.
 	void addToEnemyList(){
-		enemyList.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+		//enemyList = new List <GameObject> ();
+
+		enemyList.AddRange (GameObject.FindGameObjectsWithTag ("Enemy"));
+		
 	}
+
+	public void removeFromList(GameObject toRemove){
+		enemyList.Remove (toRemove);
+	}
+
 }
