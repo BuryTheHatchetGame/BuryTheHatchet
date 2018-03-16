@@ -56,6 +56,6 @@ public class enemyHealthManager : MonoBehaviour
         Destroy(this.gameObject);
 
 		//this calls upon the function found in Game Manager to reset the enemyLists
-		GM.GetComponent<GameManager> ().resetEnemyControllerLists ();
+		//GM.GetComponent<GameManager> ().resetEnemyControllerLists ();
     }
 }

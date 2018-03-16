@@ -58,15 +58,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	public void resetEnemyControllerLists(){
-
-		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
-		foreach (GameObject enemy in enemyControllers) {
-			enemy.GetComponent<tempEnemyController> ().resetList ();
-		}
-
-
-	}
+//	public void resetEnemyControllerLists(){
+//
+//		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
+//		foreach (GameObject enemy in enemyControllers) {
+//			enemy.GetComponent<tempEnemyController> ().resetList ();
+//		}
+//
+//
+//	}
 
 	public void removeEnemyFromList(GameObject currentRemoval){
 		GameObject toRemove = currentRemoval;

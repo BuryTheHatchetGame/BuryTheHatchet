@@ -28,7 +28,7 @@ public class tempEnemyController : MonoBehaviour
 	void Start ()
     {
 //		nma = GetComponent<NavMeshAgent> ();
-		addToEnemyList();
+		//addToEnemyList();
 		playerGO = GameObject.FindGameObjectWithTag("Player");
 		playerT = playerGO.transform;
 	}
@@ -83,21 +83,19 @@ public class tempEnemyController : MonoBehaviour
 		}
 	}
 			
-	//
-	public void resetList(){
-		//enemyList = new List <GameObject> ();
-		//enemyList.Clear();
-		//addToEnemyList ();
-	}
+//	//
+//	public void resetList(){
+//		//enemyList = new List <GameObject> ();
+//		//enemyList.Clear();
+//		//addToEnemyList ();
+//	}
 
 
 	//adds GameObjects tagged with "Enemy" to the enemyList.
-	void addToEnemyList(){
-		//enemyList = new List <GameObject> ();
-
-		enemyList.AddRange (GameObject.FindGameObjectsWithTag ("Enemy"));
-		
-	}
+//	void addToEnemyList(GameObject enemyToAdd){
+//		enemyList.Add(enemyToAdd);
+//		
+//	}
 
 	public void removeFromList(GameObject toRemove){
 		enemyList.Remove (toRemove);
