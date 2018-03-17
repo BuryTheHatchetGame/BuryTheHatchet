@@ -65,12 +65,17 @@ public class BountyDisplay : MonoBehaviour {
 	}
 
 	public void createNextBounty(){
-		if (currentBountyListNum >= 0) {
+		
+		if (currentBountyListNum <= 1) {
 			//currentBountyListNum = currentBountyListNum + 1;
-			GM.GetComponent<GameManager>().addCash(rewardFromBounty);
+			//GM.GetComponent<GameManager>().addCash(rewardFromBounty);
 			currentBountyListNum++;
 			Debug.Log (currentBountyListNum);
 			currentBounty ();
 		}
+	}
+
+	public void bountyReward(){
+		GM.GetComponent<GameManager>().addCash(rewardFromBounty);
 	}
 }

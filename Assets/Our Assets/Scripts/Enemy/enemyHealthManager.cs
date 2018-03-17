@@ -10,7 +10,7 @@ public class enemyHealthManager : MonoBehaviour
 
 	private GameObject GM;
 
-
+	public GameObject bountyBoard;
 
 
 	// Use this for initialization
@@ -18,6 +18,8 @@ public class enemyHealthManager : MonoBehaviour
     {
         health = startingHealth;
 		GM = GameObject.FindGameObjectWithTag ("GameController");
+
+		bountyBoard = GameObject.FindGameObjectWithTag ("BountyBoard");
 	}
 	
 	// Update is called once per frame
@@ -53,6 +55,11 @@ public class enemyHealthManager : MonoBehaviour
 
         Debug.Log("Dead");
 		GM.GetComponent<GameManager> ().removeEnemyFromList (currentRemoval);
+		if (this.gameObject.tag == "Boss") {
+			bountyBoard.GetComponent<BountyDisplay> ().bountyReward ();
+			bountyBoard.GetComponent<BountyDisplay> ().createNextBounty ();
+			//GM.GetComponent<GameManager>().addCash(rewardFromBounty);
+		}
         Destroy(this.gameObject);
 
 		//this calls upon the function found in Game Manager to reset the enemyLists

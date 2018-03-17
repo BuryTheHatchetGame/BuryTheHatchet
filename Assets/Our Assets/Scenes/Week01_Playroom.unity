@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   health: 0
+  bountyBoard: {fileID: 0}
 --- !u!65 &388837230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -797,6 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   health: 0
+  bountyBoard: {fileID: 0}
 --- !u!114 &754402100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +990,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114044244495204710, guid: 876cb771f1fcde441962ff2fb4c5af2e,
+        type: 2}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 77dc11c0a0e53894db36d063f49acd2b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 876cb771f1fcde441962ff2fb4c5af2e, type: 2}
   m_IsPrefabParent: 0
@@ -2091,6 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   health: 0
+  bountyBoard: {fileID: 0}
 --- !u!65 &2009437065
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -15,6 +15,6 @@ MonoBehaviour:
   bountyDescription: Catch Him
   bountyImage: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
   bountyRewardAmount: 5
-  bountyTarget: {fileID: 1780509201337712, guid: f9ee34a76394ecb43927a44cc17c95f3,
+  bountyTarget: {fileID: 1024260901087842, guid: 72e3614a84f8e9244aec8e6aaec03b11,
     type: 2}
   spawnBountyLocation: {x: 5, y: 0, z: 0}
