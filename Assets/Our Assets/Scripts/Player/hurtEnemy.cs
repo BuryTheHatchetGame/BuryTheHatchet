@@ -19,6 +19,10 @@ public class hurtEnemy : MonoBehaviour
 			other.GetComponent<enemyHealthManager>().GetHit(damageAmount);
 			Destroy(this.gameObject);
 		}
+
+		if (other.gameObject.tag == "Enviroment") {
+			Destroy (this.gameObject);
+		}
     }
 
 }
