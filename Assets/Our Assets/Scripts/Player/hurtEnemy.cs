@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class hurtEnemy : MonoBehaviour
 {
+    private GameObject theGun;
+
     public GameObject theEnemy;
-    public float damageAmount;
+    public int damageAmount;
+
+    
+
+    public void Start()
+    {
+        theGun = GameObject.FindGameObjectWithTag("PlayerGun");
+        damageAmount = theGun.GetComponent<weaponController>().damage;
+    }
 
     public void OnTriggerEnter(Collider other)
     {

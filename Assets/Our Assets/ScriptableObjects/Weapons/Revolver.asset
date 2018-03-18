@@ -14,8 +14,8 @@ MonoBehaviour:
   weaponName: Revolver
   weaponDescription: Bang Bang
   weaponImage: {fileID: 0}
-  weaponDamageAmount: 35
+  weaponDamageAmount: 20
   weaponCostAmount: 10
   weaponClipAmount: 6
-  fireRate: 0
+  weaponFireRate: 1
   bulletGFX: {fileID: 0}

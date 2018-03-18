@@ -8,6 +8,10 @@ public class weaponController : MonoBehaviour
     public Weapon weapon;
     public int damage;
     public int clipAmount;
+    public int fireRate;
+
+    private float countDownStart;
+    private float countDown;
 
     public GameObject bullet;
     // Barrel of the Gun, where the bullet is spawned from //
@@ -22,9 +26,14 @@ public class weaponController : MonoBehaviour
     {
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
+        //fireRate = weapon.weaponFireRate;
+
+        //fireRate = 10;
+
+        countDown = 2;
 
         // DEBUG - DELETE LATER //
-        Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount);
+        Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount + ", Fire Rate: " + weapon.weaponFireRate);
 
         reloadPanel.SetActive(false);
 	}
@@ -32,6 +41,8 @@ public class weaponController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        countDown += Time.deltaTime;
+
         ShootGun();
 
         Reload();
@@ -46,11 +57,32 @@ public class weaponController : MonoBehaviour
             // PARTICLE EFFECT HERE //
 
             // INSTANTIATE BULLET HERE //
-            if (clipAmount >0)
+            if (clipAmount > 0)
             {
                 SpawnBullet();
                 Debug.Log("BANG!");
                 clipAmount--;
+
+                countDown = countDownStart;
+            }
+
+        }
+
+        // Hold left Click Down - Shoot to Fire Rate //
+        if (Input.GetMouseButton(0))        
+        {
+            //countDown += Time.deltaTime;
+            // Fire Rate decrease //
+            if (countDown >= weapon.weaponFireRate)
+            { 
+                if (clipAmount > 0)
+                {
+                    SpawnBullet();
+                    Debug.Log("BANG!");
+                    clipAmount -= 1;
+                }
+                
+                countDown = countDownStart;
             }
 
         }
@@ -95,6 +127,5 @@ public class weaponController : MonoBehaviour
 
         // Destroy Bullet After 3 Seconds //
         Destroy(Bullet, 3f);
-
     }
 }

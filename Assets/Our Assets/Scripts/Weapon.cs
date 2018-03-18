@@ -14,7 +14,7 @@ public class Weapon : ScriptableObject {
 	public int weaponCostAmount;
 	public int weaponClipAmount;
 
-    public int fireRate;
+    public int weaponFireRate;
 
     public Sprite bulletGFX;
 
