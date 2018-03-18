@@ -28,6 +28,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if (other.tag == "Player") {
 			if (Input.GetKey (KeyToPress)) {
+				Time.timeScale = 0;
 				toggleBountyBoard.SetActive	(true);
 			}
 		}
@@ -38,12 +39,14 @@ public class ToggleBountyBoard : MonoBehaviour {
 	void OnTriggerExit(Collider other){
 		if (other.tag == "Player") {
 			toggleBountyBoard.SetActive (false);
+			Time.timeScale = 1;
 		}
 	}
 
 	//if function is called upon, toggleBountyBoard = false.
 	public void ExitButton(){
 		toggleBountyBoard.SetActive (false);
+		Time.timeScale = 1;
 
 	}
 }

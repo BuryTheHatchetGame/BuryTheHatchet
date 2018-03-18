@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour {
 	public Text playerCurrentAmmoAmountText;
 
 
+	public GameObject healthPickup;
+	public GameObject ammoPickup;
+	public GameObject cashPickup;
+
 
 	// Use this for initialization
 	void Start () {
@@ -75,6 +79,33 @@ public class GameManager : MonoBehaviour {
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemyControllers) {
 			enemy.GetComponent<tempEnemyController> ().removeFromList (toRemove);
+		}
+
+	}
+
+	//Drop Chance of 
+	public void enemyDropped(Vector3 enemyDeathSpot){
+		int randomNum;
+		GameObject healthPack;
+		GameObject ammoPack;
+		GameObject coinPack;
+
+
+		randomNum = Random.Range (1, 3);
+
+		if (randomNum == 1) {
+			healthPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
+			Debug.Log ("Health");
+		}
+
+		if (randomNum == 2) {
+			ammoPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
+			Debug.Log ("Ammo");
+		}
+
+		if (randomNum == 3) {
+			coinPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
+			Debug.Log ("Coin");
 		}
 
 	}

@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024260901087842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.1, z: -3.67}
+  m_LocalPosition: {x: 13.568504, y: 0.03, z: 6.6991444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4587897663940868}
@@ -259,11 +259,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  seePlayer: 0
   stoppingDistance: 8
   retreatDistance: 6
+  enemyTakeCoverDistance: 0
   enemyAvoidDistance: 5
   radiusSize: 0
   enemyList: []
+  rockList: []
 --- !u!114 &114542727324885480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,7 +285,7 @@ MonoBehaviour:
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
   bulletSpeed: 10
   barrel: {fileID: 1513275253724884}
-  eC: {fileID: 114674242420489008}
+  eC: {fileID: 0}
   playerGO: {fileID: 0}
   playerT: {fileID: 0}
 --- !u!114 &114674242420489008

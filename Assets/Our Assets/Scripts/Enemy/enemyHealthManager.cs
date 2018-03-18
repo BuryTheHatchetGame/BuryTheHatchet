@@ -54,6 +54,8 @@ public class enemyHealthManager : MonoBehaviour
 		//storing the gameobject as a variable i can access in the the gamemanager script, for removeEnemyFromList function.
 		GameObject currentRemoval = this.gameObject;
 
+		Vector3 enemyDeathSpot = this.gameObject.transform.position;
+		GM.GetComponent<GameManager> ().enemyDropped (enemyDeathSpot);
         Debug.Log("Dead");
 		//calls upon gamemanager script function(removeEnemyFromList).
 		GM.GetComponent<GameManager> ().removeEnemyFromList (currentRemoval);

@@ -35,6 +35,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4773147521356236}
+  - component: {fileID: 65363483413205854}
+  - component: {fileID: 114991831433382166}
   m_Layer: 0
   m_Name: HealthPack
   m_TagString: HealthPack
@@ -49,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1108835646175192}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.057, y: 0, z: 2.023}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4773147521356236}
@@ -62,13 +64,38 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1311667745147594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.875, y: 0, z: 0}
+  m_LocalPosition: {x: -2.077, y: 0.1, z: 1.629}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4251825249473946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65363483413205854
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311667745147594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.74799466, y: 0.06961775, z: 0.7033497}
+  m_Center: {x: -0.0070363283, y: -0.0107421875, z: -0.005487621}
+--- !u!114 &114991831433382166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311667745147594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c52f1ffebcbd40ae423c5b4d3ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 30
+  thePlayer: {fileID: 0}
 --- !u!212 &212936070398997492
 SpriteRenderer:
   m_ObjectHideFlags: 1

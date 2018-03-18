@@ -22,6 +22,7 @@ public class BountyDisplay : MonoBehaviour {
 	public int rewardFromBounty;
 //-----------------------------------------------------------------------------------------------------------------------//
 
+	public GameObject acceptButton;
 
 	public GameObject targetBounty;
 
@@ -70,6 +71,7 @@ public class BountyDisplay : MonoBehaviour {
 	public void acceptBounty(){
 		Debug.Log ("Anything");
 		newBounty.SetActive (true);
+		acceptButton.SetActive (false);
 
 	}
 
@@ -81,6 +83,7 @@ public class BountyDisplay : MonoBehaviour {
 			//GM.GetComponent<GameManager>().addCash(rewardFromBounty);
 			currentBountyListNum++;
 			Debug.Log (currentBountyListNum);
+			acceptButton.SetActive (true);
 			currentBounty ();
 		}
 	}
