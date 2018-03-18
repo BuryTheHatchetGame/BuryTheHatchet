@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4e4fc705376343a3e65b25d94f0e2, type: 3}
+  m_Name: GroundTile_Desert_v01
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: 21300000, guid: 992b53520e782e448a7f628615b559af, type: 3}
+  - {fileID: 21300000, guid: d52e84aa4d66fb748b9adc8296f4fec4, type: 3}
+  - {fileID: 21300000, guid: b5183cd57ea6e60428cd423c4527de78, type: 3}
+  - {fileID: 21300000, guid: 540bb6f2285d99a428350c49694b36fa, type: 3}
+  - {fileID: 21300000, guid: f82442e4626cef243b8f3fe50b8ba5e7, type: 3}
+  - {fileID: 21300000, guid: 9c3d3d6fa46d5bb4cb858ee3efc67e8c, type: 3}
+  - {fileID: 21300000, guid: 85fda6e422cee3a4bbe3d348129f66fe, type: 3}
+  - {fileID: 21300000, guid: 633f0aa2012c833499ca300056b25b5f, type: 3}
+  - {fileID: 21300000, guid: 72fdc9850504d024e8b2515275150cbf, type: 3}
+  - {fileID: 21300000, guid: 7fa5264acaf0cfc42ab7f65a8f337941, type: 3}
+  - {fileID: 21300000, guid: 19b8df2381e5a3c4fb90e1550d3c3fe9, type: 3}
+  - {fileID: 21300000, guid: cb50d1893bc51b84c8643e87f9aca068, type: 3}
+  - {fileID: 21300000, guid: ffe35c816e619bd4a993dcb11ff98117, type: 3}
+  - {fileID: 21300000, guid: a9bf054fe76ef2a4aac41415b9646bc9, type: 3}
+  - {fileID: 21300000, guid: 7c003260fc17d1c4bab6f21222b1c789, type: 3}
