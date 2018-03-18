@@ -23,6 +23,10 @@ public class hurtEnemy : MonoBehaviour
 		if (other.gameObject.tag == "Enviroment") {
 			Destroy (this.gameObject);
 		}
+
+		if (other.gameObject.tag == "Rock") {
+			Destroy (this.gameObject);
+		}
     }
 
 }

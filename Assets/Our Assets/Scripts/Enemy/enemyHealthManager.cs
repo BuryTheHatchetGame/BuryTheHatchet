@@ -51,15 +51,20 @@ public class enemyHealthManager : MonoBehaviour
 
     public void Die()
     {
+		//storing the gameobject as a variable i can access in the the gamemanager script, for removeEnemyFromList function.
 		GameObject currentRemoval = this.gameObject;
 
         Debug.Log("Dead");
+		//calls upon gamemanager script function(removeEnemyFromList).
 		GM.GetComponent<GameManager> ().removeEnemyFromList (currentRemoval);
+
+		//If the enemy that dies is a Boss(Tag) it will call upon two functions(bountyReward) & (createNextBounty) from the bountyDisplay Script.
 		if (this.gameObject.tag == "Boss") {
 			bountyBoard.GetComponent<BountyDisplay> ().bountyReward ();
 			bountyBoard.GetComponent<BountyDisplay> ().createNextBounty ();
-			//GM.GetComponent<GameManager>().addCash(rewardFromBounty);
+		
 		}
+
         Destroy(this.gameObject);
 
 		//this calls upon the function found in Game Manager to reset the enemyLists

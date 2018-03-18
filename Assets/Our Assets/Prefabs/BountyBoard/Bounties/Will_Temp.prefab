@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 195991445786806310}
   - component: {fileID: 54308175862741168}
   - component: {fileID: 114197069822091614}
-  - component: {fileID: 114020385497346056}
   m_Layer: 0
   m_Name: Will_Temp
   m_TagString: Boss
@@ -223,18 +222,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5601771, y: 0.08222771, z: 1.3200878}
   m_Center: {x: 0.0030158758, y: 0.009110212, z: 0.00022691488}
---- !u!114 &114020385497346056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1024260901087842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc9f5ea2cdf7cf4d82d3cc03f68994e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bountyBoard: {fileID: 0}
 --- !u!114 &114079441993356972
 MonoBehaviour:
   m_ObjectHideFlags: 1

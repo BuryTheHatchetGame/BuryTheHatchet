@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class BountyDisplay : MonoBehaviour {
 
+//Gamemanager
 	private GameObject GM;
 
 	public Bounty bounty;
 
 	private int currentBountyListNum = 0;
 
+	//--Below, public variables that change depending on the Bounty(Scriptable Object). currently public for debugging.
 	public Text bountyNameText;
 	public Text bountyDescription;
 
@@ -18,12 +20,16 @@ public class BountyDisplay : MonoBehaviour {
 
 	public Text bountyRewardText;
 	public int rewardFromBounty;
+//-----------------------------------------------------------------------------------------------------------------------//
+
+
 	public GameObject targetBounty;
 
+//Bounty spawn locations
 	private Vector3 spawnLocation;
 
+	//creates a list in the inspector, able to place Bounty(Scriptable Object) in list.
 	public List <Bounty> bountyList = new List <Bounty> ();
-
 
 	private GameObject newBounty;
 	// Use this for initialization
@@ -31,7 +37,9 @@ public class BountyDisplay : MonoBehaviour {
 		currentBounty ();
 		GM = GameObject.FindGameObjectWithTag ("GameController");
 	}
-	
+
+	//Below function, fills out all the variables on the bountyDisplay taking the information from the Bounty(Scriptable Object).
+	//Also fills out where the bountyTarget will spawn.
 	 void currentBounty(){
 		
 		bounty = bountyList [currentBountyListNum];
@@ -58,12 +66,14 @@ public class BountyDisplay : MonoBehaviour {
 //		bountyRewardText.text = bounty.bountyRewardAmount.ToString ();
 	}
 
+	//once this function has been called upon, the current bountyTarget will be visible to the player.
 	public void acceptBounty(){
 		Debug.Log ("Anything");
 		newBounty.SetActive (true);
 
 	}
 
+	//once this function has been called upon, a new bounty is called.
 	public void createNextBounty(){
 		
 		if (currentBountyListNum <= 1) {
@@ -75,6 +85,8 @@ public class BountyDisplay : MonoBehaviour {
 		}
 	}
 
+
+	//once this function has been called upon, the player gets the reward from killing the bountyTarget
 	public void bountyReward(){
 		GM.GetComponent<GameManager>().addCash(rewardFromBounty);
 	}

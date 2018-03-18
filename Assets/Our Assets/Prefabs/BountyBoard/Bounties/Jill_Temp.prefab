@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 195991445786806310}
   - component: {fileID: 54308175862741168}
   - component: {fileID: 114197069822091614}
-  - component: {fileID: 114815642966188148}
   m_Layer: 0
   m_Name: Jill_Temp
   m_TagString: Boss
@@ -299,18 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nma: {fileID: 0}
   radiusSize: 8
---- !u!114 &114815642966188148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1024260901087842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc9f5ea2cdf7cf4d82d3cc03f68994e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bountyBoard: {fileID: 0}
 --- !u!114 &114921334430825176
 MonoBehaviour:
   m_ObjectHideFlags: 1

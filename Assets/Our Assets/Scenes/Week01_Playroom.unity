@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 107002036}
   m_Layer: 0
   m_Name: Temp_Rock (3)
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 161135407}
   m_Layer: 0
   m_Name: Temp_Rock (4)
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,11 +836,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  seePlayer: 14
   stoppingDistance: 8
-  retreatDistance: 6
-  enemyAvoidDistance: 5
+  retreatDistance: 4
+  enemyTakeCoverDistance: 4
+  enemyAvoidDistance: 3
   radiusSize: 0
   enemyList: []
+  rockList: []
 --- !u!54 &388837226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -938,7 +941,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 388837224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.93, y: 0.1, z: -6}
+  m_LocalPosition: {x: 15.41, y: 0.1, z: -10.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1890601147}
@@ -1291,7 +1294,7 @@ GameObject:
   - component: {fileID: 739352157}
   m_Layer: 0
   m_Name: Temp_Rock
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,7 +1437,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754402095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.88, y: 0.1, z: 5.83}
+  m_LocalPosition: {x: 18.99, y: 0.1, z: 11.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1303909495}
@@ -1517,11 +1520,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  seePlayer: 14
   stoppingDistance: 8
-  retreatDistance: 6
-  enemyAvoidDistance: 5
+  retreatDistance: 4
+  enemyTakeCoverDistance: 4
+  enemyAvoidDistance: 3
   radiusSize: 0
   enemyList: []
+  rockList: []
 --- !u!1 &822838128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,7 +2093,7 @@ GameObject:
   - component: {fileID: 1221154251}
   m_Layer: 0
   m_Name: Temp_Rock (5)
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2991,6 +2997,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224923112399963464, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224645838876418876, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224441801471605342, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224456224840586492, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224216409630383098, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224144463467520584, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224749459553286906, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966290595549472, guid: 96dbf53c60bec654485d25902bc9a81d,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96dbf53c60bec654485d25902bc9a81d, type: 2}
   m_IsPrefabParent: 0
@@ -3186,7 +3232,7 @@ GameObject:
   - component: {fileID: 1879976093}
   m_Layer: 0
   m_Name: Temp_Rock (1)
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3404,7 +3450,7 @@ GameObject:
   - component: {fileID: 1928012907}
   m_Layer: 0
   m_Name: Temp_Rock (2)
-  m_TagString: Enviroment
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3652,11 +3698,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  seePlayer: 14
   stoppingDistance: 8
-  retreatDistance: 6
-  enemyAvoidDistance: 6
+  retreatDistance: 4
+  enemyTakeCoverDistance: 4
+  enemyAvoidDistance: 3
   radiusSize: 0
   enemyList: []
+  rockList: []
 --- !u!54 &2009437061
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3754,7 +3803,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009437059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.07, y: 0.1, z: 0.07}
+  m_LocalPosition: {x: -17.66, y: 0.1, z: 6.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1448228945}

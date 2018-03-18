@@ -12,6 +12,7 @@ TagManager:
   - PlayerGun
   - Boss
   - Enviroment
+  - Rock
   layers:
   - Default
   - TransparentFX

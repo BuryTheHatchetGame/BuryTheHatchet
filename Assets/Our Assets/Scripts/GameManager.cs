@@ -49,10 +49,11 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	//once this function is called upon, bountyActive = true.
 	public void bountyAccepted(){
 		bountyActive = true;
 	}
-
+	//once this function is called upon, bountyActive = false.
 	public void bountyComplete(){
 		bountyActive = false;
 	}
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour {
 //
 //	}
 
+	//once this function is called upon, it removes the latest enemy to die from enemyList in all enemyController Scripts.
 	public void removeEnemyFromList(GameObject currentRemoval){
 		GameObject toRemove = currentRemoval;
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
