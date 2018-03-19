@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1399562369823828
 GameObject:
   m_ObjectHideFlags: 1
@@ -419,7 +419,8 @@ MonoBehaviour:
   bountyImage: {fileID: 114966290595549472}
   bountyRewardText: {fileID: 114145636382359904}
   rewardFromBounty: 0
-  targetBounty: {fileID: 0}
+  acceptButton: {fileID: 1399562369823828}
+  targetBounty: {fileID: 1504101002876590}
   bountyList:
   - {fileID: 11400000, guid: df16d8a4b7a8ac24abc61b1623df503c, type: 2}
   - {fileID: 11400000, guid: 998e3fa60ddd83445bb9365ad9d686f6, type: 2}
