@@ -25,5 +25,6 @@ public class hurtPlayer : MonoBehaviour
     public void HurtPlayer(float damageAmount)
     {
         thePlayer.GetComponent<playerHealthMananger>().TakeDamage(damageAmount);
+		Destroy (this.gameObject);
     }
 }
