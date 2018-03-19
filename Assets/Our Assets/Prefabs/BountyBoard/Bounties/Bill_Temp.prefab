@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  seePlayer: 0
+  seePlayer: 14
   stoppingDistance: 8
   retreatDistance: 6
   enemyTakeCoverDistance: 0
