@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class weaponController : MonoBehaviour
 {
+	private bool countDownOn = false;
+
     [Header("Weapon Variables")]
     public Weapon weapon;
     public int damage;
@@ -16,6 +18,7 @@ public class weaponController : MonoBehaviour
     // Reload Time //
     private float reloadCountDownStart;
     private float reloadCountDown;
+	private float tempReloadCountDown;
 
     // Fire Rate Counter //
     private float countDownStart;
@@ -56,9 +59,13 @@ public class weaponController : MonoBehaviour
 
         ShootGun();
 
-        ReloadReload();
+        //ReloadReload();
 
-        AutoReload();
+		//newCountdown ();
+
+        //AutoReload();
+
+		TempReload ();
 
     }
 
@@ -113,49 +120,62 @@ public class weaponController : MonoBehaviour
         }
     }
 
-    public void AutoReload()
-    {
-        if (clipAmount <= 0)
-        {
-          reloadCountDown -= Time.deltaTime;
+//    public void AutoReload()
+//    {
+//        if (clipAmount <= 0)
+//        {
+//          reloadCountDown -= Time.deltaTime;
+//
+//            if (reloadCountDown <= 0)
+//            {
+//
+//                // Reload Weapon //
+//                Debug.Log("RELOADING...");
+//                clipAmount = weapon.weaponClipAmount;
+//
+//                reloadPanel.SetActive(false);
+//
+//                reloadCountDown = weapon.weaponReloadTime;
+//            }
+//
+//        }
+//
+//    }
 
-            if (reloadCountDown <= 0)
-            {
+	public void TempReload(){
+		//bool countDownOn;
+		float tempClipAmount;
+		//countDownOn = false;
 
-                // Reload Weapon //
-                Debug.Log("RELOADING...");
-                clipAmount = weapon.weaponClipAmount;
+		if (Input.GetKeyDown (KeyCode.R)) {
+			tempClipAmount = weapon.weaponClipAmount - clipAmount;
+			tempClipAmount = tempClipAmount / 2f;
+			reloadCountDown = tempClipAmount;
+			countDownOn = true;
+		}
 
-                reloadPanel.SetActive(false);
+		if (countDownOn == true) {
+			reloadCountDown -= Time.deltaTime;
+		
+	
+			if (reloadCountDown <= 0) {
 
-                reloadCountDown = weapon.weaponReloadTime;
-            }
+				// Reload Weapon //
+				Debug.Log ("RELOADING...");
+				clipAmount = weapon.weaponClipAmount;
 
-        }
+				reloadPanel.SetActive (false);
 
-    }
+				countDownOn = false;
+				Debug.Log (countDownOn);
+		
+			}
+		}
 
-    void ReloadReload()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            // Reload Weapon //
-            Debug.Log("RELOADING...");
-            clipAmount++;
+	}
+		
 
-            reloadPanel.SetActive(false);
 
-            reloadCountDown = weapon.weaponReloadTime;
-
-            if (clipAmount >= weapon.weaponClipAmount)
-            {
-                clipAmount = weapon.weaponClipAmount;
-            }
-
-        }
-
-            
-    }
 
     public void SpawnBullet()
     {
