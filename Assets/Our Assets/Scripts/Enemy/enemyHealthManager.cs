@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class enemyHealthManager : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class enemyHealthManager : MonoBehaviour
 
 	public GameObject bountyBoard;
 
+    private float deathCounter;
+
 
 	// Use this for initialization
 	void Start ()
     {
+        deathCounter = 0;
+
         health = startingHealth;
 		GM = GameObject.FindGameObjectWithTag ("GameController");
 
@@ -51,6 +56,14 @@ public class enemyHealthManager : MonoBehaviour
 
     public void Die()
     {
+        // ANALYTICS - Enemy Deaths Counter //
+        Analytics.CustomEvent("Enemy Death Counter", new Dictionary<string, object>
+        {
+            {"Enemies Killed", deathCounter}
+        });
+        
+
+
 		//storing the gameobject as a variable i can access in the the gamemanager script, for removeEnemyFromList function.
 		GameObject currentRemoval = this.gameObject;
 

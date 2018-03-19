@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class playerHealthMananger : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class playerHealthMananger : MonoBehaviour
     public float health;
     public Image healthBar;
 
+    private float deathCount;
+
 	// Use this for initialization
 	void Start ()
     {
         health = startHealth;
+        deathCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -53,6 +57,15 @@ public class playerHealthMananger : MonoBehaviour
 
     public void Die()
     {
+        deathCount++;
         Debug.Log("Bang Bang!! You Died!");
+
+        // Player respawn //
+
+        // Death Count Analytics //
+        Analytics.CustomEvent("Player Death Count", new Dictionary<string, object>
+        {
+            { "Died", deathCount}
+        }); 
     }
 }

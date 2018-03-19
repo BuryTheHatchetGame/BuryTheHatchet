@@ -118,6 +118,9 @@ public class weaponController : MonoBehaviour
 
             Debug.Log("OUT OF AMMO...");
         }
+
+
+
     }
 
 //    public void AutoReload()
