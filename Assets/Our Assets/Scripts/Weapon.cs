@@ -16,6 +16,8 @@ public class Weapon : ScriptableObject {
 
     public int weaponFireRate;
 
+    public int weaponReloadTime;
+
     public Sprite bulletGFX;
 
 }

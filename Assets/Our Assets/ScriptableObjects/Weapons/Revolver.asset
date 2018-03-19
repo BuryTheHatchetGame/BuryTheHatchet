@@ -18,4 +18,5 @@ MonoBehaviour:
   weaponCostAmount: 10
   weaponClipAmount: 6
   weaponFireRate: 1
+  weaponReloadTime: 3
   bulletGFX: {fileID: 0}

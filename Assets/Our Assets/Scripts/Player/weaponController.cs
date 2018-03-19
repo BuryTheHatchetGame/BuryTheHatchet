@@ -9,16 +9,24 @@ public class weaponController : MonoBehaviour
     public int damage;
     public int clipAmount;
     public int fireRate;
+    public int reloadTime;
 
+    public float bulletSpeed = 10;
+
+    // Reload Time //
+    private float reloadCountDownStart;
+    private float reloadCountDown;
+
+    // Fire Rate Counter //
     private float countDownStart;
     private float countDown;
 
+    [Header("Weapons 'Parts'")]
     public GameObject bullet;
     // Barrel of the Gun, where the bullet is spawned from //
     public GameObject barrel;
 
-    public float bulletSpeed = 10;
-
+    [Header("Panels")]
     public GameObject reloadPanel;
 
 	// Use this for initialization
@@ -26,11 +34,14 @@ public class weaponController : MonoBehaviour
     {
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
-        //fireRate = weapon.weaponFireRate;
+        fireRate = weapon.weaponFireRate;
+        reloadTime = weapon.weaponReloadTime;
 
         //fireRate = 10;
 
-        countDown = 2;
+        countDown = fireRate + 1;
+
+        reloadCountDown = reloadTime;
 
         // DEBUG - DELETE LATER //
         Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount + ", Fire Rate: " + weapon.weaponFireRate);
@@ -45,7 +56,9 @@ public class weaponController : MonoBehaviour
 
         ShootGun();
 
-        Reload();
+        ReloadReload();
+
+        AutoReload();
 
     }
 
@@ -64,11 +77,12 @@ public class weaponController : MonoBehaviour
                 clipAmount--;
 
                 countDown = countDownStart;
+                //countDown = fireRate +1;
             }
 
         }
 
-        // Hold left Click Down - Shoot to Fire Rate //
+        // Hold left Click Down - Shoot according to Fire Rate //
         if (Input.GetMouseButton(0))        
         {
             //countDown += Time.deltaTime;
@@ -99,21 +113,48 @@ public class weaponController : MonoBehaviour
         }
     }
 
-    public void Reload()
+    public void AutoReload()
     {
-        // If the player pressed "R" while ammo is 0 - Reload //
-        if (clipAmount == 0)
+        if (clipAmount <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+          reloadCountDown -= Time.deltaTime;
+
+            if (reloadCountDown <= 0)
             {
+
                 // Reload Weapon //
                 Debug.Log("RELOADING...");
                 clipAmount = weapon.weaponClipAmount;
 
                 reloadPanel.SetActive(false);
+
+                reloadCountDown = weapon.weaponReloadTime;
             }
+
         }
 
+    }
+
+    void ReloadReload()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Reload Weapon //
+            Debug.Log("RELOADING...");
+            clipAmount++;
+
+            reloadPanel.SetActive(false);
+
+            reloadCountDown = weapon.weaponReloadTime;
+
+            if (clipAmount >= weapon.weaponClipAmount)
+            {
+                clipAmount = weapon.weaponClipAmount;
+            }
+
+        }
+
+            
     }
 
     public void SpawnBullet()
