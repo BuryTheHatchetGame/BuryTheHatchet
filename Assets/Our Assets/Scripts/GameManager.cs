@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour {
 
@@ -96,16 +97,19 @@ public class GameManager : MonoBehaviour {
 		if (randomNum == 1) {
 			healthPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
 			Debug.Log ("Health");
+			Analytics.CustomEvent ("Health_Dropped", null);
 		}
 
 		if (randomNum == 2) {
 			ammoPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
 			Debug.Log ("Ammo");
+			Analytics.CustomEvent ("Ammo_Dropped", null);
 		}
 
 		if (randomNum == 3) {
 			coinPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
 			Debug.Log ("Coin");
+			Analytics.CustomEvent ("Coin_Dropped", null);
 		}
 
 	}

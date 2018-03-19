@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Analytics;
 
 public class tempEnemyController : MonoBehaviour
 {
@@ -87,6 +88,7 @@ public class tempEnemyController : MonoBehaviour
 				// checks distance between this.gameobject.position and playerT.position if it is less then the stopping distance & more then retreatDistance, this gameobject will stand still.
 			} else if (Vector3.Distance (transform.position, playerT.position) < stoppingDistance && Vector3.Distance (transform.position, playerT.position) > retreatDistance) {
 				transform.position = this.transform.position;
+				Analytics.CustomEvent ("Enemy_Retreated", null);
 				//enemyTakeCover ();
 
 
