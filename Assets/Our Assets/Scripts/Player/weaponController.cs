@@ -187,7 +187,7 @@ public class weaponController : MonoBehaviour
 
         // Spawn Bullet + Add Force //
         GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
-        Bullet.GetComponent<Rigidbody>().AddForce(barrel.transform.right * bulletSpeed, ForceMode.Impulse);
+        Bullet.GetComponent<Rigidbody2D>().AddForce(barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
 
         // Destroy Bullet After 3 Seconds //
         Destroy(Bullet, 3f);
