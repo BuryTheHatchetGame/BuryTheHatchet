@@ -43,7 +43,7 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             //Debug.Log("Moving Upwards...");
-            transform.position += Vector3.forward.normalized * movementSpeed * Time.deltaTime;
+            transform.position += Vector3.up.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
 
@@ -52,7 +52,7 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             //Debug.Log("Moving Downwards...");
-            transform.position += Vector3.back.normalized * movementSpeed * Time.deltaTime;
+            transform.position += Vector3.down.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
 

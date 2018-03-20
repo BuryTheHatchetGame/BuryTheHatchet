@@ -18,21 +18,21 @@ public class LookAt : MonoBehaviour
 
             Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
             mousePos.x = mousePos.x - gunPos.x;
-            mousePos.y = mousePos.y - gunPos.y;
+            mousePos.z = mousePos.z - gunPos.z;
 
-            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(mousePos.z, mousePos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
         }
         else if (transform.localScale.x == -1)
         {
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 5.23f;
+            mousePos.y = 5.23f; // if breaks change back to mouse pos .z
 
             Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
             mousePos.x = mousePos.x - gunPos.x;
-            mousePos.y = mousePos.y - gunPos.y;
+            mousePos.z = mousePos.z - gunPos.z;
 
-            float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(mousePos.z, mousePos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
         }
     }
