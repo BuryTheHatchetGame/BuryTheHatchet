@@ -25,7 +25,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	}
 	
 	//if other gameobject staying within this gameobjects collider is tagged "Player" it will allow the player to press "E" to set toggleBountyBoard to true.
-	void OnTriggerStay(Collider other){
+	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player") {
 			if (Input.GetKey (KeyToPress)) {
 				Time.timeScale = 0;
@@ -36,7 +36,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	}
 
 	//if other gameobject tagged "Player" leaves this gameobjects collider, toggleBountyBoard = false.
-	void OnTriggerExit(Collider other){
+	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			toggleBountyBoard.SetActive (false);
 			Time.timeScale = 1;

@@ -17,7 +17,9 @@ public class hurtEnemy : MonoBehaviour
         damageAmount = theGun.GetComponent<weaponController>().damage;
     }
 
-    public void OnTriggerEnter(Collider other)
+
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {

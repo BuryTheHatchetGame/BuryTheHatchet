@@ -14,7 +14,7 @@ public class hurtPlayer : MonoBehaviour
         thePlayer.GetComponent<playerHealthMananger>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {

@@ -13,7 +13,8 @@ public class LookAt : MonoBehaviour
 
     public void Update()
     {
-		gunlookat ();
+		gunLookAtTryThree ();
+		//gunlookat ();
 //		if (transform.localScale.y == 1)
 //        {
 //            Vector3 mousePos = Input.mousePosition;
@@ -41,27 +42,36 @@ public class LookAt : MonoBehaviour
     }
 
 
-	void gunlookat(){
-		if(transform.localScale.x == 1)
-		{
+//	void gunlookat(){
+//		if(transform.localScale.x == 1)
+//		{
+//
+//			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
+//			mousePos.x = mousePos.x - gunPos.x;
+//			mousePos.y = mousePos.y - gunPos.y;
+//
+//			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+//			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
+//	}
+//		else if(transform.localScale.x == -1)
+//		{
+//
+//			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
+//			mousePos.x = mousePos.x - gunPos.x;
+//			mousePos.y = mousePos.y - gunPos.y;
+//
+//			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+//			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
+//		}
 
-			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
-			mousePos.x = mousePos.x - gunPos.x;
-			mousePos.y = mousePos.y - gunPos.y;
+	void gunLookAtTryThree(){
+		Vector3 diff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
+		diff.Normalize ();
 
-			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
+		float rot_z = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler (0f, 0f, rot_z);
+
 	}
-		else if(transform.localScale.x == -1)
-		{
-
-			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
-			mousePos.x = mousePos.x - gunPos.x;
-			mousePos.y = mousePos.y - gunPos.y;
-
-			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
-		}
     //public GameObject thisOneSpins;
     //public GameObject gunSprite;
     //private SpriteRenderer gunSpriteRend;
@@ -100,5 +110,5 @@ public class LookAt : MonoBehaviour
 
 
     //}
-}
+
 }
