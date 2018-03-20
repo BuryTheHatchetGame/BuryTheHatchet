@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class BountyDisplay : MonoBehaviour {
 
@@ -73,7 +74,9 @@ public class BountyDisplay : MonoBehaviour {
 		newBounty.SetActive (true);
 		acceptButton.SetActive (false);
 
-	}
+        Analytics.CustomEvent("Bounty Accepted", null);
+
+    }
 
 	//once this function has been called upon, a new bounty is called.
 	public void createNextBounty(){
