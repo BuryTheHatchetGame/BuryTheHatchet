@@ -4,39 +4,64 @@ using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    public Vector3 mousePos;
+   // public Vector3 mousePos;
     public Vector3 gunPos;
+
+	public Vector2 mousePos;
 
     public float angle;
 
     public void Update()
     {
-       if (transform.localScale.x == 1)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 5.25f;
-
-            Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
-            mousePos.x = mousePos.x - gunPos.x;
-            mousePos.z = mousePos.z - gunPos.z;
-
-            float angle = Mathf.Atan2(mousePos.z, mousePos.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
-        }
-        else if (transform.localScale.x == -1)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.y = 5.23f; // if breaks change back to mouse pos .z
-
-            Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
-            mousePos.x = mousePos.x - gunPos.x;
-            mousePos.z = mousePos.z - gunPos.z;
-
-            float angle = Mathf.Atan2(mousePos.z, mousePos.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
-        }
+		gunlookat ();
+//		if (transform.localScale.y == 1)
+//        {
+//            Vector3 mousePos = Input.mousePosition;
+//			mousePos.z = 5.25f;
+//
+//            Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
+//			mousePos.x = mousePos.x - gunPos.x;
+//            mousePos.y = mousePos.y - gunPos.y;
+//
+//			float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+//            transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
+//        }
+//		else if (transform.localScale.y == -1)
+//        {
+//            Vector3 mousePos = Input.mousePosition;
+//			mousePos.z = 5.23f; // if breaks change back to mouse pos .z
+//
+//            Vector3 gunPos = Camera.main.WorldToScreenPoint(transform.position);
+//			mousePos.x = mousePos.x - gunPos.x;
+//			mousePos.z = mousePos.z - gunPos.z;
+//
+//			float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+//            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+//        }
     }
 
+
+	void gunlookat(){
+		if(transform.localScale.x == 1)
+		{
+
+			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
+			mousePos.x = mousePos.x - gunPos.x;
+			mousePos.y = mousePos.y - gunPos.y;
+
+			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
+	}
+		else if(transform.localScale.x == -1)
+		{
+
+			Vector2 gunPos = Camera.main.WorldToScreenPoint (transform.position);
+			mousePos.x = mousePos.x - gunPos.x;
+			mousePos.y = mousePos.y - gunPos.y;
+
+			float angly = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.Euler(new Vector2(0, -angle));
+		}
     //public GameObject thisOneSpins;
     //public GameObject gunSprite;
     //private SpriteRenderer gunSpriteRend;
@@ -75,4 +100,5 @@ public class LookAt : MonoBehaviour
 
 
     //}
+}
 }
