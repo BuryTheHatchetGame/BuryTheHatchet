@@ -8,6 +8,11 @@ public class playerController : MonoBehaviour
     public float movementSpeed;
     public Rigidbody rb;
 
+
+	//rayCastVariables
+	public float addToRayCastStart;
+	public float addToRayCastEnd;
+
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,11 +36,16 @@ public class playerController : MonoBehaviour
 
         #region MoveRight
         // RIGHT MOVEMENT //
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            //Debug.Log("Moving Right...");
-            transform.position += Vector3.right.normalized * movementSpeed * Time.deltaTime;
-        }
+//		RaycastHit2D hit = Physics2D.Linecast (new Vector2(transform.position.x + addToRayCastStart, 0), new Vector2(transform.position.x + addToRayCastEnd, 0));
+//		if(hit.collider == false){
+
+        	if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        	{
+				
+           		 transform.position += Vector3.right.normalized * movementSpeed * Time.deltaTime;
+				//Debug.Log(hit.collider.name);
+       		 }
+	
         #endregion
 
         #region MoveUpwards
@@ -55,7 +65,15 @@ public class playerController : MonoBehaviour
             transform.position += Vector3.down.normalized * movementSpeed * Time.deltaTime;
         }
         #endregion
+}
+    
+	//}
 
-    }
+	void rayCastCheck(){
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.right);
+
+		//RaycastHit2D (Vector2 (this.gameObject.transform.position), Vector2 (1, 0), 1 = Mathf.Infinity, 0.5f = -Mathf.Infinity, 1f = Mathf.Infinity);
+		//Debug.DrawRay (RaycastHit2D (Vector2 (this.gameObject.transform.position), Vector2 (1, 0), 1 = Mathf.Infinity, 0.5f = -Mathf.Infinity, 1f = Mathf.Infinity));
+	}
 
 }

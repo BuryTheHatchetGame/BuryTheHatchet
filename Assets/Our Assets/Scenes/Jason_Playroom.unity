@@ -1493,14 +1493,6 @@ CompositeCollider2D:
         Y: 70000000
       - X: -150000000
         Y: 70000000
-    - - X: 50000000
-        Y: 70000000
-      - X: -90000000
-        Y: 70000000
-      - X: -90000000
-        Y: 50000000
-      - X: 50000000
-        Y: 50000000
     - - X: -130000000
         Y: 70000000
       - X: -150000000
@@ -1512,6 +1504,14 @@ CompositeCollider2D:
       - X: -140000000
         Y: 50000000
       - X: -130000000
+        Y: 50000000
+    - - X: 50000000
+        Y: 70000000
+      - X: -90000000
+        Y: 70000000
+      - X: -90000000
+        Y: 50000000
+      - X: 50000000
         Y: 50000000
     - - X: -90000000
         Y: 50000000
@@ -1589,16 +1589,16 @@ CompositeCollider2D:
       - {x: -20, y: 9}
       - {x: -20, y: 7}
       - {x: -15, y: 7}
-    - - {x: 5, y: 7}
-      - {x: -9, y: 7}
-      - {x: -9, y: 5}
-      - {x: 5, y: 5}
     - - {x: -13, y: 7}
       - {x: -15, y: 7}
       - {x: -15, y: 6}
       - {x: -14, y: 6}
       - {x: -14, y: 5}
       - {x: -13, y: 5}
+    - - {x: 5, y: 7}
+      - {x: -9, y: 7}
+      - {x: -9, y: 5}
+      - {x: 5, y: 5}
     - - {x: -9, y: 5}
       - {x: -13, y: 5}
       - {x: -13, y: 3}
@@ -4000,11 +4000,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4999882577342094, guid: 876cb771f1fcde441962ff2fb4c5af2e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4999882577342094, guid: 876cb771f1fcde441962ff2fb4c5af2e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4999882577342094, guid: 876cb771f1fcde441962ff2fb4c5af2e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4157,6 +4157,16 @@ Prefab:
         type: 2}
       propertyPath: divideFloat
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368455484957516, guid: 876cb771f1fcde441962ff2fb4c5af2e,
+        type: 2}
+      propertyPath: addToRayCastStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368455484957516, guid: 876cb771f1fcde441962ff2fb4c5af2e,
+        type: 2}
+      propertyPath: addToRayCastEnd
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65848353602475226, guid: 876cb771f1fcde441962ff2fb4c5af2e, type: 2}
@@ -5627,9 +5637,7 @@ GameObject:
   - component: {fileID: 2042059216}
   - component: {fileID: 2042059218}
   - component: {fileID: 2042059217}
-  - component: {fileID: 2042059221}
   - component: {fileID: 2042059220}
-  - component: {fileID: 2042059219}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -49874,26 +49882,6 @@ Tilemap:
     m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
---- !u!66 &2042059219
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2042059215}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
 --- !u!50 &2042059220
 Rigidbody2D:
   serializedVersion: 4
@@ -49914,19 +49902,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!19719996 &2042059221
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2042059215}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
 --- !u!114 &2115975632
 MonoBehaviour:
   m_ObjectHideFlags: 0
