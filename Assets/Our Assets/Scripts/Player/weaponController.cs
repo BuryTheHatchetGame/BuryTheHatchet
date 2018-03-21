@@ -20,6 +20,8 @@ public class weaponController : MonoBehaviour
     private float reloadCountDown;
 	private float tempReloadCountDown;
 
+	public float divideFloat = 2f;
+
     // Fire Rate Counter //
     private float countDownStart;
     private float countDown;
@@ -152,7 +154,7 @@ public class weaponController : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.R)) {
 			tempClipAmount = weapon.weaponClipAmount - clipAmount;
-			tempClipAmount = tempClipAmount / 2f;
+			tempClipAmount = tempClipAmount / divideFloat;
 			reloadCountDown = tempClipAmount;
 			countDownOn = true;
 		}
