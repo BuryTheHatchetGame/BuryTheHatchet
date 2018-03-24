@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d858d1738be45634d8d504bdb5681fce, type: 3}
+  m_Name: Crow_Animation_Tile
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: aef35d0c6edc5f44d95ed43515799f92, type: 3}
+  - {fileID: 21300000, guid: 0b50626ab4362284e8cf69c7edc6546c, type: 3}
+  - {fileID: 21300000, guid: 9d21b8e1efe5a294ebdc598e4dad05ca, type: 3}
+  - {fileID: 21300000, guid: 5068e97232c860c44ada3b920a83322a, type: 3}
+  - {fileID: 21300000, guid: 99e54f4e2aea99f40bbb79ddbee90621, type: 3}
+  - {fileID: 21300000, guid: b1e5604b0d8c46246a9261cf007b185a, type: 3}
+  - {fileID: 21300000, guid: cd02bfb8de3aaee4b9f2fbf512febb8f, type: 3}
+  - {fileID: 21300000, guid: 6b4d58c75f70f994ea965dd86c297da2, type: 3}
+  - {fileID: 21300000, guid: 2028875569d3e3942b4a9cf764607c2b, type: 3}
+  - {fileID: 21300000, guid: 16bb4d30e9aff924897518b9662edda4, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_TileColliderType: 2
