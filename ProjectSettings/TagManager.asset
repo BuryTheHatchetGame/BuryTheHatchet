@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - Enviroment
   - Rock
+  - InteractTextBubble
   layers:
   - Default
   - TransparentFX

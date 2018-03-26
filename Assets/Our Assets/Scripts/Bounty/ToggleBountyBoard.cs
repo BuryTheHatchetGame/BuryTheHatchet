@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleBountyBoard : MonoBehaviour {
 
-	public Text interactButton;
+	public GameObject interactTextBubble;
 
 	public string interactButtonDescription;
 
@@ -22,14 +22,21 @@ public class ToggleBountyBoard : MonoBehaviour {
 	//Initially sets the object you'd like to turn on, off.
 	void Start () {
 		toggleBountyBoard.SetActive (false);
+		//interactTextBubble = GameObject.FindGameObjectWithTag ("InteractTextBubble");
 	}
-	
+	void OnTriggerEnter2D (Collider2D other){
+		if (other.tag == "Player") {
+			interactTextBubble.SetActive (true);
+		}
+	}
+
 	//if other gameobject staying within this gameobjects collider is tagged "Player" it will allow the player to press "E" to set toggleBountyBoard to true.
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player") {
 			if (Input.GetKey (KeyToPress)) {
 				Time.timeScale = 0;
 				toggleBountyBoard.SetActive	(true);
+			
 			}
 		}
 
@@ -39,6 +46,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			toggleBountyBoard.SetActive (false);
+			interactTextBubble.SetActive (false);
 			Time.timeScale = 1;
 		}
 	}

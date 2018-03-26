@@ -32,7 +32,7 @@ public class weaponController : MonoBehaviour
     public GameObject barrel;
 
     [Header("Panels")]
-    public GameObject reloadPanel;
+    public GameObject reloadText;
 
 	// Use this for initialization
 	void Start ()
@@ -51,7 +51,7 @@ public class weaponController : MonoBehaviour
         // DEBUG - DELETE LATER //
         Debug.Log (weapon.weaponName + ", Damage: " + weapon.weaponDamageAmount + ", Clip Amount: " + weapon.weaponClipAmount + ", Fire Rate: " + weapon.weaponFireRate);
 
-        reloadPanel.SetActive(false);
+		reloadText.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -116,7 +116,7 @@ public class weaponController : MonoBehaviour
             clipAmount = 0;
 
             // SHOW RELOAD UI HERE //
-            reloadPanel.SetActive(true);
+			reloadText.SetActive(true);
 
             Debug.Log("OUT OF AMMO...");
         }
@@ -157,9 +157,11 @@ public class weaponController : MonoBehaviour
 			tempClipAmount = tempClipAmount / divideFloat;
 			reloadCountDown = tempClipAmount;
 			countDownOn = true;
+		
 		}
 
 		if (countDownOn == true) {
+			reloadText.SetActive (false);
 			reloadCountDown -= Time.deltaTime;
 		
 	
@@ -169,7 +171,7 @@ public class weaponController : MonoBehaviour
 				Debug.Log ("RELOADING...");
 				clipAmount = weapon.weaponClipAmount;
 
-				reloadPanel.SetActive (false);
+				reloadText.SetActive (false);
 
 				countDownOn = false;
 				Debug.Log (countDownOn);
