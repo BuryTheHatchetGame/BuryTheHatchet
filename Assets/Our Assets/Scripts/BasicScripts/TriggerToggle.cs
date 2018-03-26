@@ -9,9 +9,9 @@ public class TriggerToggle : MonoBehaviour {
 	public GameObject toggleObject;
 	public ToggleType toggleType;
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerStay2D (Collider2D other)
 	{
-		if (other.tag == "Player")
+		if ((other.tag == "Player") && (Input.GetKey(KeyCode.E)))
 		{
 			if (toggleType == ToggleType.turnOn)
 				toggleObject.SetActive (true);
