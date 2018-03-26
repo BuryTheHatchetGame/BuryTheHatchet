@@ -15,6 +15,6 @@ MonoBehaviour:
   bountyDescription: He is Dope
   bountyImage: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
   bountyRewardAmount: 25
-  bountyTarget: {fileID: 1024260901087842, guid: 6f7ae1949f4458a45934366083f73beb,
+  bountyTarget: {fileID: 1024260901087842, guid: a964b9da38222ed4eb467d48344bd8b7,
     type: 2}
-  spawnBountyLocation: {x: 9, y: 0, z: 0}
+  spawnBountyLocation: {x: 16, y: -30, z: 0}
