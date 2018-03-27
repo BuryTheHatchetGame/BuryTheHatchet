@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Our Assets/Scenes/jake_Week02.unity
-    guid: 96129911a578d904bbfc0e7042f1be69
+    path: Assets/Our Assets/Scenes/MainMenu.unity
+    guid: a3cce365f8c90cb43b178f58e20db2b2
+  - enabled: 1
+    path: Assets/Our Assets/Scenes/Jake_Greybox_Test.unity
+    guid: 4be0ddb085d16bb4197eeeaff739e617
