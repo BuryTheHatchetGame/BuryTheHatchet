@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4898147519232194}
   - component: {fileID: 114106907594700902}
+  - component: {fileID: 114737110917141686}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -51,7 +52,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a167b8a7f5cebad4fa958d62e57fdd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   bountyActive: 0
+  enemyControllers: []
   playerCashAmount: 0
   playerCashAmountText: {fileID: 0}
   playerCurrentAmmoAmountText: {fileID: 0}
+  healthPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c,
+    type: 2}
+  ammoPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c, type: 2}
+  cashPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c, type: 2}
+--- !u!114 &114737110917141686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124124724049866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742fe60181eb7a849a4b02da34a1689b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Hurt
+    clip: {fileID: 8300000, guid: a34a4624f1d65d24b840e42620303a02, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 75f78ac0068125540b8d6ba71c8cf73c, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: Coin Pickup
+    clip: {fileID: 8300000, guid: 35d16f460ad4c29409bfec11af62ea44, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: Health Pickup
+    clip: {fileID: 8300000, guid: 42b250a19f7270345ae55e243be2df53, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
