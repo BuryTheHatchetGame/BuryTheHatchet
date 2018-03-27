@@ -10,8 +10,17 @@ public class enemyWeaponController : MonoBehaviour
     [Header("Weapon Variables")]
     public Weapon weapon;
     public int damage;
-	public float shotTimer;
+
+
+	public float shotTimerMin;
+	public float shotTimerMax;
 	public float countDown;
+
+	public float reloadTimer;
+	private bool doReload;
+
+	public float enemyClipAmount;
+	public float originalClipAmount;
 
     public GameObject bullet;
 	public float bulletSpeed = 10;
@@ -35,7 +44,10 @@ public class enemyWeaponController : MonoBehaviour
         damage = weapon.weaponDamageAmount;
 		//fireRate = weapon.fireRate;
 
-		countDown = shotTimer;
+		countDown = Random.Range(shotTimerMin, shotTimerMax);
+		enemyClipAmount = originalClipAmount;
+
+		doReload = false;
     }
 	
 	// Update is called once per frame
@@ -51,8 +63,14 @@ public class enemyWeaponController : MonoBehaviour
 
 		if (countDown <= 0) 
 		{
-			countDown = shotTimer;
+			countDown = Random.Range(shotTimerMin, shotTimerMax);
 		}
+
+		if (doReload == true) {
+			reloadTimer -= Time.deltaTime;
+		}
+
+
 	}
 
 	public void Shoot()
@@ -60,15 +78,38 @@ public class enemyWeaponController : MonoBehaviour
 		//Debug.Log("Shoot gun at Player");
 		// DEBUG - REMOVE LATER //
 		Debug.Log("Bullet Moving...");
+		if (enemyClipAmount > 0) {
 
-        gm.GetComponent<AudioManager>().PlaySound("Shoot");
-		// Spawn Bullet + Add Force //
-		GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
-		Bullet.GetComponent<Rigidbody2D>().AddForce(barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
+			gm.GetComponent<AudioManager> ().PlaySound ("Shoot");
+			// Spawn Bullet + Add Force //
+			GameObject Bullet = Instantiate (bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
+			Bullet.GetComponent<Rigidbody2D> ().AddForce (barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
 
-		// Destroy Bullet After 3 Seconds //
-		Destroy(Bullet, 3f);
+			enemyClipAmount = enemyClipAmount - 1;
+			// Destroy Bullet After 3 Seconds //
+			Destroy (Bullet, 3f);
+
+		} else if (enemyClipAmount == 0) {
+			doReload = true;
+			reload ();
+		}
 
 	}
+
+	public void reload(){
+
+			if (reloadTimer <= 0) {
+
+				// Reload Weapon //
+				Debug.Log ("RELOADING...");
+				enemyClipAmount = originalClipAmount;
+
+
+				doReload = false;
+				Debug.Log (doReload);
+
+			}
+		}
+
     
 }

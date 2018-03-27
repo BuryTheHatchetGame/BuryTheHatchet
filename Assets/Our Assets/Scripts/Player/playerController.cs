@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     public Rigidbody rb;
 
 
+
 	//rayCastVariables
 	public float addToRayCastStart;
 	public float addToRayCastEnd;
@@ -31,6 +32,7 @@ public class playerController : MonoBehaviour
         {
             //Debug.Log("Moving Left...");
             transform.position += Vector3.left.normalized * movementSpeed * Time.deltaTime;
+
         }
         #endregion
 
@@ -44,6 +46,7 @@ public class playerController : MonoBehaviour
 				
            		 transform.position += Vector3.right.normalized * movementSpeed * Time.deltaTime;
 				//Debug.Log(hit.collider.name);
+
        		 }
 	
         #endregion

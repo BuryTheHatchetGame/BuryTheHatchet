@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
 
         gm.GetComponent<AudioManager>().PlaySound("Coin Pickup");
 		playerCashAmount = playerCashAmount + addCashAmmount;
-		playerCashAmountText.text = "Cash $:" + playerCashAmount.ToString ();
+		playerCashAmountText.text = "Cash "+ "$" + playerCashAmount.ToString ();
 
 	}
 

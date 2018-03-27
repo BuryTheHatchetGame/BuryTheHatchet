@@ -50,7 +50,7 @@ public class BountyDisplay : MonoBehaviour {
 
 		bountyImage.sprite = bounty.bountyImage;
 
-		bountyRewardText.text = bounty.bountyRewardAmount.ToString();
+		bountyRewardText.text = "$" + bounty.bountyRewardAmount.ToString();
 		rewardFromBounty = bounty.bountyRewardAmount;
 
 		spawnLocation = bounty.spawnBountyLocation;

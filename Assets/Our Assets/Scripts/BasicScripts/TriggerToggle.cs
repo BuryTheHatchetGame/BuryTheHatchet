@@ -11,16 +11,33 @@ public class TriggerToggle : MonoBehaviour {
 	public GameObject toggleObject;
 	public ToggleType toggleType;
 
+	private bool allowToInteract;
+
 	void Start(){
 		interactTextBubble.SetActive (false);
+		allowToInteract = false;
 	}
 
-	void OnTriggerStay2D (Collider2D other)
+	void Update(){
+		ableToInteract ();
+
+	}
+
+	void OnTriggerEnter2D (Collider2D other)
 	{
 		
 		if (other.tag == "Player")
 		{
+			allowToInteract = true;
 			interactTextBubble.SetActive (true);
+
+		}
+		
+	}
+
+	void ableToInteract(){
+		if (allowToInteract == true) {
+			
 			if (Input.GetKey (KeyCode.E)) {
 				if (toggleType == ToggleType.turnOn)
 					toggleObject.SetActive (true);
@@ -30,12 +47,12 @@ public class TriggerToggle : MonoBehaviour {
 					toggleObject.SetActive (!toggleObject.activeSelf);
 			}
 		}
-		
 	}
 
 	void OnTriggerExit2D (Collider2D other){
 		if (other.tag == "Player") {
 			interactTextBubble.SetActive (false);
+			
 		}
 	}
 }

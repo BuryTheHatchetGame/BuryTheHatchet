@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
+
+	//player sprite gameobject
+	public GameObject playerSprite;
+
+	//revolver sprite gameobject
+	public GameObject revolver;
+
    // public Vector3 mousePos;
+
     public Vector3 gunPos;
 
 	public Vector2 mousePos;
@@ -39,6 +47,7 @@ public class LookAt : MonoBehaviour
 //			float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 //            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
 //        }
+		SpriteFlip();
     }
 
 
@@ -71,7 +80,23 @@ public class LookAt : MonoBehaviour
 		float rot_z = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler (0f, 0f, rot_z);
 
+		//revolver.GetComponent<SpriteRenderer> ().flipX = true;
+
 	}
+
+	void SpriteFlip(){
+		Vector3 CheckMousePos = Camera.main.ScreenToViewportPoint (Input.mousePosition);
+		if (CheckMousePos.x < .5f) {
+			revolver.GetComponent<SpriteRenderer> ().flipY = true;
+			playerSprite.GetComponent<SpriteRenderer>().flipX = true;
+		} else if (CheckMousePos.x > .5f) {
+			revolver.GetComponent<SpriteRenderer> ().flipY = false;
+			playerSprite.GetComponent<SpriteRenderer>().flipX = false;
+		}
+
+
+	}
+
     //public GameObject thisOneSpins;
     //public GameObject gunSprite;
     //private SpriteRenderer gunSpriteRend;

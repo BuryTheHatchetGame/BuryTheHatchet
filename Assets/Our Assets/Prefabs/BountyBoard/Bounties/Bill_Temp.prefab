@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9551665035e2d2941923f837762d8d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 200
   health: 0
   bountyBoard: {fileID: 0}
 --- !u!212 &212032447117267108

@@ -292,8 +292,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 77dc11c0a0e53894db36d063f49acd2b, type: 2}
   damage: 5
-  shotTimer: 0.5
+  shotTimerMin: 0.4
+  shotTimerMax: 1
   countDown: 0
+  reloadTimer: 1.5
+  enemyClipAmount: 0
+  originalClipAmount: 6
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
   bulletSpeed: 10
   barrel: {fileID: 1945832105238528}

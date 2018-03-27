@@ -18,26 +18,42 @@ public class ToggleBountyBoard : MonoBehaviour {
 	//Place your player character within this gameobject
 	public GameObject player;
 
+	private bool bountyboardAccess;
 
 	//Initially sets the object you'd like to turn on, off.
 	void Start () {
 		toggleBountyBoard.SetActive (false);
+		interactTextBubble.SetActive (false);
+		bountyboardAccess = false;
 		//interactTextBubble = GameObject.FindGameObjectWithTag ("InteractTextBubble");
+	}
+
+	void Update(){
+		turnBountyBoardOn ();
+
 	}
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.tag == "Player") {
 			interactTextBubble.SetActive (true);
+			bountyboardAccess = true;
 		}
 	}
 
 	//if other gameobject staying within this gameobjects collider is tagged "Player" it will allow the player to press "E" to set toggleBountyBoard to true.
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player") {
+			bountyboardAccess = true;
+		}
+
+	}
+
+	void turnBountyBoardOn(){
+		if(bountyboardAccess == true){
 			if (Input.GetKey (KeyToPress)) {
 				Time.timeScale = 0;
 				toggleBountyBoard.SetActive	(true);
-			
 			}
+
 		}
 
 	}
@@ -45,7 +61,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	//if other gameobject tagged "Player" leaves this gameobjects collider, toggleBountyBoard = false.
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
-			toggleBountyBoard.SetActive (false);
+			bountyboardAccess = false;
 			interactTextBubble.SetActive (false);
 			Time.timeScale = 1;
 		}
@@ -53,6 +69,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 
 	//if function is called upon, toggleBountyBoard = false.
 	public void ExitButton(){
+		toggleBountyBoard.SetActive (false);
 		toggleBountyBoard.SetActive (false);
 		Time.timeScale = 1;
 
