@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour {
 
-	public bool bountyActive;
+    [SerializeField]
+    private AudioManager audioManager;
+
+    private GameObject gm;
+    private GameObject audioSource;
+
+    public bool bountyActive;
 	public GameObject[] enemyControllers;
 	public int playerCashAmount;
 	public Text playerCashAmountText;
@@ -19,9 +26,17 @@ public class GameManager : MonoBehaviour {
 	public GameObject ammoPickup;
 	public GameObject cashPickup;
 
-
 	// Use this for initialization
 	void Start () {
+
+        gm = GameObject.FindGameObjectWithTag("GameController");
+
+        audioManager = AudioManager.instance;
+        if (audioManager == null)
+        {
+            Debug.LogError("No AudioManager found in Scene");
+        }
+
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
 	}
 	
@@ -33,6 +48,7 @@ public class GameManager : MonoBehaviour {
 
 	public void addCash(int addCashAmmount){
 
+        gm.GetComponent<AudioManager>().PlaySound("Coin Pickup");
 		playerCashAmount = playerCashAmount + addCashAmmount;
 		playerCashAmountText.text = "Cash $:" + playerCashAmount.ToString ();
 

@@ -6,6 +6,9 @@ using UnityEngine.Analytics;
 
 public class playerHealthMananger : MonoBehaviour
 {
+    private GameObject gm;
+    private GameObject audioSource;
+
     [Header("Health Variables")]
     public float startHealth = 100f;
     public float health;
@@ -13,9 +16,13 @@ public class playerHealthMananger : MonoBehaviour
 
     private float deathCount;
 
+    public Vector3 respawnLocation;
+
 	// Use this for initialization
 	void Start ()
     {
+        gm = GameObject.FindGameObjectWithTag("GameController");
+
         health = startHealth;
         deathCount = 0;
 	}
@@ -38,6 +45,7 @@ public class playerHealthMananger : MonoBehaviour
 
     public void TakeDamage (float amount)
     {
+        
         health -= amount;
 
         healthBar.fillAmount = health / startHealth;
@@ -50,6 +58,7 @@ public class playerHealthMananger : MonoBehaviour
 
     public void HealthUp(float healAmount)
     {
+        gm.GetComponent<AudioManager>().PlaySound("Health Pickup");
         health += healAmount;
 
         healthBar.fillAmount = health / startHealth;
@@ -60,7 +69,10 @@ public class playerHealthMananger : MonoBehaviour
         deathCount++;
         Debug.Log("Bang Bang!! You Died!");
 
-        // Player respawn //
+        // Player Respawn //
+        transform.position = respawnLocation;
+        // reset health //
+        // reset ammo //
 
         // Death Count Analytics //
         Analytics.CustomEvent("Player Death Count", new Dictionary<string, object>

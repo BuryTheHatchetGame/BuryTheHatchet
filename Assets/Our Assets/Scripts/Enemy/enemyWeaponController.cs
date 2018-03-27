@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class enemyWeaponController : MonoBehaviour
 {
+    private GameObject gm;
+    private GameObject audioSource;
+
     [Header("Weapon Variables")]
     public Weapon weapon;
     public int damage;
@@ -23,6 +26,8 @@ public class enemyWeaponController : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
+        gm = GameObject.FindGameObjectWithTag("GameController");
+
 		playerGO = GameObject.FindGameObjectWithTag("Player");
 		playerT = playerGO.transform;
 
@@ -56,6 +61,7 @@ public class enemyWeaponController : MonoBehaviour
 		// DEBUG - REMOVE LATER //
 		Debug.Log("Bullet Moving...");
 
+        gm.GetComponent<AudioManager>().PlaySound("Shoot");
 		// Spawn Bullet + Add Force //
 		GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
 		Bullet.GetComponent<Rigidbody2D>().AddForce(barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);

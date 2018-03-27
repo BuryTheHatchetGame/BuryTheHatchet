@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class weaponController : MonoBehaviour
 {
+    private GameObject gm;
+    private GameObject audioSource;
+
 	private bool countDownOn = false;
 
     [Header("Weapon Variables")]
@@ -37,6 +40,9 @@ public class weaponController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        gm = GameObject.FindGameObjectWithTag("GameController");
+        
+
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
         fireRate = weapon.weaponFireRate;
@@ -81,6 +87,7 @@ public class weaponController : MonoBehaviour
             // INSTANTIATE BULLET HERE //
             if (clipAmount > 0)
             {
+                gm.GetComponent<AudioManager>().PlaySound("Shoot");
                 SpawnBullet();
                 Debug.Log("BANG!");
                 clipAmount--;
