@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bountyName: Will
   bountyDescription: He is Dope
-  bountyImage: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+  bountyImage: {fileID: 21300000, guid: dbe7a9ed0b95dbd468ceb4f0db6b78c5, type: 3}
   bountyRewardAmount: 25
   bountyTarget: {fileID: 1024260901087842, guid: a964b9da38222ed4eb467d48344bd8b7,
     type: 2}
