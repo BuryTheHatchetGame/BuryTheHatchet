@@ -15,12 +15,12 @@ public class CoinPickup : MonoBehaviour {
 //		GM.GetComponent<GameManager>().addCash(addCoinAmmount);
 //	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter2D (Collider2D other){
 		
 		if (other.tag == "Player") {
 			
 			GM.GetComponent<GameManager>().addCash(addCoinAmmount);
-
+			Destroy (this.gameObject);
 		}
 	}
 

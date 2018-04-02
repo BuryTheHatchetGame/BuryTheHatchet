@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	//Drop Chance of 
-	public void enemyDropped(Vector3 enemyDeathSpot){
+	public void enemyDropped(Vector2 enemyDeathSpot){
 		int randomNum;
 		GameObject healthPack;
 		GameObject ammoPack;
@@ -117,13 +117,13 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (randomNum == 2) {
-			ammoPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
+			ammoPack = Instantiate (ammoPickup, enemyDeathSpot, Quaternion.identity);
 			Debug.Log ("Ammo");
 			Analytics.CustomEvent ("Ammo_Dropped", null);
 		}
 
 		if (randomNum == 3) {
-			coinPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
+			coinPack = Instantiate (cashPickup, enemyDeathSpot, Quaternion.identity);
 			Debug.Log ("Coin");
 			Analytics.CustomEvent ("Coin_Dropped", null);
 		}

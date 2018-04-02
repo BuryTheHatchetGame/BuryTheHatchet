@@ -60,8 +60,8 @@ MonoBehaviour:
   playerCurrentAmmoAmountText: {fileID: 0}
   healthPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c,
     type: 2}
-  ammoPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c, type: 2}
-  cashPickup: {fileID: 1311667745147594, guid: a03fbe55b5d318e41a1d08337f9b944c, type: 2}
+  ammoPickup: {fileID: 1238439362603176, guid: a976dfa938b5e104b9b22b78ad02c859, type: 2}
+  cashPickup: {fileID: 1238439362603176, guid: a976dfa938b5e104b9b22b78ad02c859, type: 2}
 --- !u!114 &114737110917141686
 MonoBehaviour:
   m_ObjectHideFlags: 1
