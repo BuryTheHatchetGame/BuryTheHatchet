@@ -8,8 +8,6 @@ public class weaponController : MonoBehaviour
     private GameObject gm;
     private GameObject audioSource;
 
-	private bool shootAllowed = true;
-
 	private bool countDownOn = false;
 
     [Header("Weapon Variables")]
@@ -18,6 +16,8 @@ public class weaponController : MonoBehaviour
     public int clipAmount;
     public int fireRate;
     public int reloadTime;
+
+    public bool shootAllowed = true;
 
     public Text playerCurrentAmmoAmountText;
 
@@ -67,23 +67,24 @@ public class weaponController : MonoBehaviour
 
 		reloadText.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         countDown += Time.deltaTime;
 
-		if (shootAllowed == true) {
-			
-			ShootGun ();
-		}
+        if (shootAllowed == true)
+        {
+            ShootGun();
+        }
+
         //ReloadReload();
 
-		//newCountdown ();
+        //newCountdown ();
 
         //AutoReload();
 
-		TempReload ();
+        TempReload ();
 
         playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
 
@@ -91,53 +92,58 @@ public class weaponController : MonoBehaviour
 
     public void ShootGun()
     {
-		
-			// Left Click to Shoot  // 
-			if (Input.GetMouseButtonDown (0)) {
-				// PARTICLE EFFECT HERE //
+        // Left Click to Shoot  // 
+        if (Input.GetMouseButtonDown(0))
+        {
+            // PARTICLE EFFECT HERE //
 
-				// INSTANTIATE BULLET HERE //
-				if (clipAmount > 0) {
+            // INSTANTIATE BULLET HERE //
+            if (clipAmount > 0)
+            {
                 
                 
-					SpawnBullet ();
-					Debug.Log ("BANG!");
-					clipAmount--;
+                SpawnBullet();
+                Debug.Log("BANG!");
+                clipAmount--;
 
-					countDown = countDownStart;
-					//countDown = fireRate +1;
-				}
+                countDown = countDownStart;
+                //countDown = fireRate +1;
+            }
 
-			}
+        }
 
-			// Hold left Click Down - Shoot according to Fire Rate //
-			if (Input.GetMouseButton (0)) {
-				//countDown += Time.deltaTime;
-				// Fire Rate decrease //
-				if (countDown >= weapon.weaponFireRate) { 
-					if (clipAmount > 0) {
+        // Hold left Click Down - Shoot according to Fire Rate //
+        if (Input.GetMouseButton(0))        
+        {
+            //countDown += Time.deltaTime;
+            // Fire Rate decrease //
+            if (countDown >= weapon.weaponFireRate)
+            { 
+                if (clipAmount > 0)
+                {
                     
 
-						SpawnBullet ();
-						Debug.Log ("BANG!");
-						clipAmount -= 1;
-					}
+                    SpawnBullet();
+                    Debug.Log("BANG!");
+                    clipAmount -= 1;
+                }
                 
-					countDown = countDownStart;
-				}
+                countDown = countDownStart;
+            }
 
-			}
+        }
 
-			// EMPTY GUN //
-			if (clipAmount <= 0) {
-				clipAmount = 0;
+        // EMPTY GUN //
+        if (clipAmount <= 0)
+        {
+            clipAmount = 0;
             
 
-				// SHOW RELOAD UI HERE //
-				reloadText.SetActive (true);
+            // SHOW RELOAD UI HERE //
+            reloadText.SetActive(true);
 
-				Debug.Log ("OUT OF AMMO...");
-			}
+            Debug.Log("OUT OF AMMO...");
+        }
 
 
 
@@ -204,32 +210,32 @@ public class weaponController : MonoBehaviour
 
     public void SpawnBullet()
     {
+        // DEBUG - REMOVE LATER //
+        Debug.Log("Bullet Moving...");
 
-			// DEBUG - REMOVE LATER //
-			Debug.Log ("Bullet Moving...");
+        playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
 
-			playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString ();
+        // PLAY SHOOTING SOUND //
+        gm.GetComponent<AudioManager>().PlaySound("Shoot");
 
-			// PLAY SHOOTING SOUND //
-			gm.GetComponent<AudioManager> ().PlaySound ("Shoot");
+        // Spawn Bullet + Add Force //
+        GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
+        Bullet.GetComponent<Rigidbody2D>().AddForce(barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
 
-			// Spawn Bullet + Add Force //
-			GameObject Bullet = Instantiate (bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
-			Bullet.GetComponent<Rigidbody2D> ().AddForce (barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
-
-			// Destroy Bullet After 3 Seconds //
-			Destroy (Bullet, 3f);
-		
+        // Destroy Bullet After 3 Seconds //
+        Destroy(Bullet, 3f);
     }
 
-	public void ShootIsAllowed(){
+    public void ShootIsAllowed()
+    {
 
-		if (shootAllowed == false) {
-			shootAllowed = true;
-		} else if (shootAllowed == true) {
-			shootAllowed = false;
-		}
-	}
-
-
+        if (shootAllowed == false)
+        {
+            shootAllowed = true;
+        }
+        else if (shootAllowed == true)
+        {
+            shootAllowed = false;
+        }
+    }
 }
