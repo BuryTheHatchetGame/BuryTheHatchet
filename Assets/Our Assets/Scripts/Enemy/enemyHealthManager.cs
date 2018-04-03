@@ -14,6 +14,7 @@ public class enemyHealthManager : MonoBehaviour
 	public GameObject bountyBoard;
 
     private float deathCounter;
+    public GameObject bloodEffect;
 
 
 	// Use this for initialization
@@ -46,12 +47,14 @@ public class enemyHealthManager : MonoBehaviour
 
     public void GetHit(float amount)
     {
+        GameObject bloodFX = (Instantiate(bloodEffect, transform.position, Quaternion.identity)) as GameObject;
         health -= amount;
 
         if (health <= 0)
         {
             Die();
         }
+        Destroy(bloodFX, 2f);
     }
 
     public void Die()

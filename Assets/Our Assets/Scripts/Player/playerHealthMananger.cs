@@ -14,6 +14,8 @@ public class playerHealthMananger : MonoBehaviour
     public float health;
     public Image healthBar;
 
+    public GameObject bloodEffect;
+
     private float deathCount;
 
     public Vector3 respawnLocation;
@@ -45,7 +47,7 @@ public class playerHealthMananger : MonoBehaviour
 
     public void TakeDamage (float amount)
     {
-        
+        GameObject bloodFX = (Instantiate(bloodEffect, transform.position, Quaternion.identity)) as GameObject;
         health -= amount;
 
         healthBar.fillAmount = health / startHealth;
@@ -54,6 +56,7 @@ public class playerHealthMananger : MonoBehaviour
         {
             Die();
         }
+        Destroy(bloodFX, 2f);
     }
 
     public void HealthUp(float healAmount)

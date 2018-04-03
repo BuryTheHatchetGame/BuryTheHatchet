@@ -134,10 +134,11 @@ public class weaponController : MonoBehaviour
         }
 
         // EMPTY GUN //
-        if (clipAmount <= 0)
+        if (Input.GetKeyDown(KeyCode.R) && clipAmount <= 0)
         {
             clipAmount = 0;
-            
+
+            gm.GetComponent<AudioManager>().PlaySound("Reload");
 
             // SHOW RELOAD UI HERE //
             reloadText.SetActive(true);
@@ -177,7 +178,9 @@ public class weaponController : MonoBehaviour
 		//countDownOn = false;
 
 		if (Input.GetKeyDown (KeyCode.R)) {
-			tempClipAmount = weapon.weaponClipAmount - clipAmount;
+
+
+            tempClipAmount = weapon.weaponClipAmount - clipAmount;
 			tempClipAmount = tempClipAmount / divideFloat;
 			reloadCountDown = tempClipAmount;
 			countDownOn = true;
@@ -191,8 +194,10 @@ public class weaponController : MonoBehaviour
 	
 			if (reloadCountDown <= 0) {
 
-				// Reload Weapon //
-				Debug.Log ("RELOADING...");
+                
+
+                // Reload Weapon //
+                Debug.Log ("RELOADING...");
 				clipAmount = weapon.weaponClipAmount;
 
 				reloadText.SetActive (false);

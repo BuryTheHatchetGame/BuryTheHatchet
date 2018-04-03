@@ -105,7 +105,7 @@ MonoBehaviour:
     randomVolume: 0.1
     randomPitch: 0.1
   - name: Shoot
-    clip: {fileID: 8300000, guid: 75f78ac0068125540b8d6ba71c8cf73c, type: 3}
+    clip: {fileID: 8300000, guid: 9e8290af6bab9dd45bfd6b1dec069292, type: 3}
     volume: 0.7
     pitch: 1
     randomVolume: 0.1
@@ -118,6 +118,12 @@ MonoBehaviour:
     randomPitch: 0.1
   - name: Health Pickup
     clip: {fileID: 8300000, guid: 42b250a19f7270345ae55e243be2df53, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: Reload
+    clip: {fileID: 8300000, guid: de651029cc46b3142ba5c783996513ad, type: 3}
     volume: 0.7
     pitch: 1
     randomVolume: 0.1

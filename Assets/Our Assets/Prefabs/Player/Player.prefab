@@ -359,6 +359,7 @@ MonoBehaviour:
   clipAmount: 0
   fireRate: 0
   reloadTime: 0
+  shootAllowed: 1
   playerCurrentAmmoAmountText: {fileID: 0}
   bulletSpeed: 10
   divideFloat: 3
@@ -379,6 +380,8 @@ MonoBehaviour:
   startHealth: 100
   health: 0
   healthBar: {fileID: 0}
+  bloodEffect: {fileID: 1872141250615756, guid: 0b754e03edea5b14098998df7f08c19f,
+    type: 2}
   respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &114363616379927976
 MonoBehaviour:
