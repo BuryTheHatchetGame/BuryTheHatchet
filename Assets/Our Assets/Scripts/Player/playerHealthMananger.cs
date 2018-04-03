@@ -81,4 +81,9 @@ public class playerHealthMananger : MonoBehaviour
             { "Died", deathCount}
         }); 
     }
+
+	public void NewSpawnPoint(Vector3 newSpawnPoint){
+
+		respawnLocation = newSpawnPoint;
+	}
 }
