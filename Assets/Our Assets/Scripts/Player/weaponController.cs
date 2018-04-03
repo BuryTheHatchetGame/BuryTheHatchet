@@ -8,6 +8,8 @@ public class weaponController : MonoBehaviour
     private GameObject gm;
     private GameObject audioSource;
 
+	private bool shootAllowed = true;
+
 	private bool countDownOn = false;
 
     [Header("Weapon Variables")]
@@ -71,8 +73,10 @@ public class weaponController : MonoBehaviour
     {
         countDown += Time.deltaTime;
 
-        ShootGun();
-
+		if (shootAllowed == true) {
+			
+			ShootGun ();
+		}
         //ReloadReload();
 
 		//newCountdown ();
@@ -87,58 +91,53 @@ public class weaponController : MonoBehaviour
 
     public void ShootGun()
     {
-        // Left Click to Shoot  // 
-        if (Input.GetMouseButtonDown(0))
-        {
-            // PARTICLE EFFECT HERE //
+		
+			// Left Click to Shoot  // 
+			if (Input.GetMouseButtonDown (0)) {
+				// PARTICLE EFFECT HERE //
 
-            // INSTANTIATE BULLET HERE //
-            if (clipAmount > 0)
-            {
+				// INSTANTIATE BULLET HERE //
+				if (clipAmount > 0) {
                 
                 
-                SpawnBullet();
-                Debug.Log("BANG!");
-                clipAmount--;
+					SpawnBullet ();
+					Debug.Log ("BANG!");
+					clipAmount--;
 
-                countDown = countDownStart;
-                //countDown = fireRate +1;
-            }
+					countDown = countDownStart;
+					//countDown = fireRate +1;
+				}
 
-        }
+			}
 
-        // Hold left Click Down - Shoot according to Fire Rate //
-        if (Input.GetMouseButton(0))        
-        {
-            //countDown += Time.deltaTime;
-            // Fire Rate decrease //
-            if (countDown >= weapon.weaponFireRate)
-            { 
-                if (clipAmount > 0)
-                {
+			// Hold left Click Down - Shoot according to Fire Rate //
+			if (Input.GetMouseButton (0)) {
+				//countDown += Time.deltaTime;
+				// Fire Rate decrease //
+				if (countDown >= weapon.weaponFireRate) { 
+					if (clipAmount > 0) {
                     
 
-                    SpawnBullet();
-                    Debug.Log("BANG!");
-                    clipAmount -= 1;
-                }
+						SpawnBullet ();
+						Debug.Log ("BANG!");
+						clipAmount -= 1;
+					}
                 
-                countDown = countDownStart;
-            }
+					countDown = countDownStart;
+				}
 
-        }
+			}
 
-        // EMPTY GUN //
-        if (clipAmount <= 0)
-        {
-            clipAmount = 0;
+			// EMPTY GUN //
+			if (clipAmount <= 0) {
+				clipAmount = 0;
             
 
-            // SHOW RELOAD UI HERE //
-            reloadText.SetActive(true);
+				// SHOW RELOAD UI HERE //
+				reloadText.SetActive (true);
 
-            Debug.Log("OUT OF AMMO...");
-        }
+				Debug.Log ("OUT OF AMMO...");
+			}
 
 
 
@@ -205,19 +204,32 @@ public class weaponController : MonoBehaviour
 
     public void SpawnBullet()
     {
-        // DEBUG - REMOVE LATER //
-        Debug.Log("Bullet Moving...");
 
-        playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
+			// DEBUG - REMOVE LATER //
+			Debug.Log ("Bullet Moving...");
 
-        // PLAY SHOOTING SOUND //
-        gm.GetComponent<AudioManager>().PlaySound("Shoot");
+			playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString ();
 
-        // Spawn Bullet + Add Force //
-        GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
-        Bullet.GetComponent<Rigidbody2D>().AddForce(barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
+			// PLAY SHOOTING SOUND //
+			gm.GetComponent<AudioManager> ().PlaySound ("Shoot");
 
-        // Destroy Bullet After 3 Seconds //
-        Destroy(Bullet, 3f);
+			// Spawn Bullet + Add Force //
+			GameObject Bullet = Instantiate (bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
+			Bullet.GetComponent<Rigidbody2D> ().AddForce (barrel.transform.right * bulletSpeed, ForceMode2D.Impulse);
+
+			// Destroy Bullet After 3 Seconds //
+			Destroy (Bullet, 3f);
+		
     }
+
+	public void ShootIsAllowed(){
+
+		if (shootAllowed == false) {
+			shootAllowed = true;
+		} else if (shootAllowed == true) {
+			shootAllowed = false;
+		}
+	}
+
+
 }

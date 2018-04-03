@@ -173,7 +173,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40237427, y: 0.2449224}
+  m_Offset: {x: -0.56752205, y: -0.13040996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -184,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4898453, y: 1.4898448}
+  m_Size: {x: 1.9602623, y: 0.7391801}
   m_EdgeRadius: 0
 --- !u!114 &114802287880461400
 MonoBehaviour:
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTextBubble: {fileID: 0}
   interactButtonDescription: 
+  playerGunHolder: {fileID: 0}
   toggleBountyBoard: {fileID: 0}
   KeyToPress: 101
   player: {fileID: 0}

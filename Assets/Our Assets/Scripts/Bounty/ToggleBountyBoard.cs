@@ -9,6 +9,8 @@ public class ToggleBountyBoard : MonoBehaviour {
 
 	public string interactButtonDescription;
 
+	public GameObject playerGunHolder;
+
 	//Game Object you would like to turn on.
 	public GameObject toggleBountyBoard;
 
@@ -25,6 +27,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 		toggleBountyBoard.SetActive (false);
 		interactTextBubble.SetActive (false);
 		bountyboardAccess = false;
+
 		//interactTextBubble = GameObject.FindGameObjectWithTag ("InteractTextBubble");
 	}
 
@@ -34,6 +37,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.tag == "Player") {
+			playerGunHolder.GetComponent<weaponController> ().ShootIsAllowed();
 			interactTextBubble.SetActive (true);
 			bountyboardAccess = true;
 		}
@@ -51,7 +55,9 @@ public class ToggleBountyBoard : MonoBehaviour {
 		if(bountyboardAccess == true){
 			if (Input.GetKey (KeyToPress)) {
 				Time.timeScale = 0;
+				//playerGunHolder.GetComponent<weaponController> ().ShootIsAllowed();
 				toggleBountyBoard.SetActive	(true);
+
 			}
 
 		}
@@ -63,6 +69,7 @@ public class ToggleBountyBoard : MonoBehaviour {
 		if (other.tag == "Player") {
 			bountyboardAccess = false;
 			interactTextBubble.SetActive (false);
+			playerGunHolder.GetComponent<weaponController> ().ShootIsAllowed();
 			Time.timeScale = 1;
 		}
 	}

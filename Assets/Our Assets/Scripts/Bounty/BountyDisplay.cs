@@ -13,6 +13,8 @@ public class BountyDisplay : MonoBehaviour {
 
 	private int currentBountyListNum = 0;
 
+	public GameObject bountyBoardCollider;
+
 	//--Below, public variables that change depending on the Bounty(Scriptable Object). currently public for debugging.
 	public Text bountyNameText;
 	public Text bountyDescription;
@@ -73,6 +75,7 @@ public class BountyDisplay : MonoBehaviour {
 		Debug.Log ("Anything");
 		newBounty.SetActive (true);
 		acceptButton.SetActive (false);
+		bountyBoardCollider.GetComponent<ToggleBountyBoard> ().ExitButton ();
 
         Analytics.CustomEvent("Bounty Accepted", null);
 

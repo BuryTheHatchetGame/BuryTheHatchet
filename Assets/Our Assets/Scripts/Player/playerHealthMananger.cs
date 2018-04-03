@@ -73,7 +73,8 @@ public class playerHealthMananger : MonoBehaviour
         transform.position = respawnLocation;
         // reset health //
         // reset ammo //
-
+		health = startHealth;
+		healthBar.fillAmount = health / startHealth;
         // Death Count Analytics //
         Analytics.CustomEvent("Player Death Count", new Dictionary<string, object>
         {

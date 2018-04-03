@@ -96,12 +96,19 @@ public class GameManager : MonoBehaviour {
 
 	//once this function is called upon, it removes the latest enemy to die from enemyList in all enemyController Scripts.
 	public void removeEnemyFromList(GameObject currentRemoval){
+		//GameObject currentBoss = GameObject.FindGameObjectWithTag ("Boss");
 		GameObject toRemove = currentRemoval;
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemyControllers) {
 			enemy.GetComponent<tempEnemyController> ().removeFromList (toRemove);
 		}
 
+		if (bountyActive == true) {
+			GameObject currentBoss = GameObject.FindGameObjectWithTag ("Boss");
+			currentBoss.GetComponent<tempEnemyController> ().removeFromList (toRemove);
+		}
+
+		//currentBoss.GetComponent<tempEnemyController> ().removeFromList (toRemove);
 	}
 
 	//Drop Chance of 
@@ -112,7 +119,7 @@ public class GameManager : MonoBehaviour {
 		GameObject cashPack;
 
 
-		randomNum = Random.Range (1, 3);
+		randomNum = Random.Range (1, 5);
 
 		if (randomNum == 1) {
 			healthPack = Instantiate (healthPickup, enemyDeathSpot, Quaternion.identity);
