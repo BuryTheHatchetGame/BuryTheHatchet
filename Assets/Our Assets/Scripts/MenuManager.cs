@@ -23,9 +23,14 @@ public class MenuManager : MonoBehaviour
 
     public void PressControls()
     {
-        mainMenu.SetActive(false);
         controlsMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
 
+    public void ReturnToMain()
+    {
+        mainMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
 
     public void PressQuit()
