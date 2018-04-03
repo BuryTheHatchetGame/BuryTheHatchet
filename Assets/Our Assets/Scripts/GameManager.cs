@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     private GameObject gm;
     private GameObject audioSource;
 
+	private GameObject currentBoss;
+
     public bool bountyActive;
 	public GameObject[] enemyControllers;
 	public int playerCashAmount;
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour {
 	//once this function is called upon, bountyActive = true.
 	public void bountyAccepted(){
 		bountyActive = true;
+		currentBoss = GameObject.FindGameObjectWithTag ("Boss");
 	}
 	//once this function is called upon, bountyActive = false.
 	public void bountyComplete(){
@@ -104,7 +107,6 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (bountyActive == true) {
-			GameObject currentBoss = GameObject.FindGameObjectWithTag ("Boss");
 			currentBoss.GetComponent<tempEnemyController> ().removeFromList (toRemove);
 		}
 

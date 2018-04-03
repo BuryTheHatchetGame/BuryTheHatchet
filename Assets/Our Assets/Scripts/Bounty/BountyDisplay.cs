@@ -76,6 +76,7 @@ public class BountyDisplay : MonoBehaviour {
 		newBounty.SetActive (true);
 		acceptButton.SetActive (false);
 		bountyBoardCollider.GetComponent<ToggleBountyBoard> ().ExitButton ();
+		GM.GetComponent<GameManager> ().bountyAccepted ();
 
         Analytics.CustomEvent("Bounty Accepted", null);
 
@@ -98,5 +99,6 @@ public class BountyDisplay : MonoBehaviour {
 	//once this function has been called upon, the player gets the reward from killing the bountyTarget
 	public void bountyReward(){
 		GM.GetComponent<GameManager>().addCash(rewardFromBounty);
+		GM.GetComponent<GameManager> ().bountyComplete ();
 	}
 }

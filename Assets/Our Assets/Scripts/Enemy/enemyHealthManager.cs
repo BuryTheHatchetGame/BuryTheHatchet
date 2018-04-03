@@ -75,8 +75,8 @@ public class enemyHealthManager : MonoBehaviour
 
 		//If the enemy that dies is a Boss(Tag) it will call upon two functions(bountyReward) & (createNextBounty) from the bountyDisplay Script.
 		if (this.gameObject.tag == "Boss") {
-			bountyBoard.GetComponent<BountyDisplay> ().bountyReward ();
-			bountyBoard.GetComponent<BountyDisplay> ().createNextBounty ();
+			GM.GetComponent<BountyDisplay> ().bountyReward ();
+			GM.GetComponent<BountyDisplay> ().createNextBounty ();
 		
 		}
 
@@ -85,4 +85,6 @@ public class enemyHealthManager : MonoBehaviour
 		//this calls upon the function found in Game Manager to reset the enemyLists
 		//GM.GetComponent<GameManager> ().resetEnemyControllerLists ();
     }
+
+
 }

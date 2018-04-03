@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4898147519232194}
   - component: {fileID: 114106907594700902}
   - component: {fileID: 114737110917141686}
+  - component: {fileID: 114262156701060716}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -61,6 +62,30 @@ MonoBehaviour:
     type: 2}
   coinPickup: {fileID: 1114824108621952, guid: 7097a560ef1285140a5fb26fa10ef023, type: 2}
   cashPickup: {fileID: 1238439362603176, guid: a976dfa938b5e104b9b22b78ad02c859, type: 2}
+--- !u!114 &114262156701060716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124124724049866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eccdb4d5819d724aa69bd1b3553dfa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounty: {fileID: 11400000, guid: df16d8a4b7a8ac24abc61b1623df503c, type: 2}
+  bountyBoardCollider: {fileID: 0}
+  bountyNameText: {fileID: 0}
+  bountyDescription: {fileID: 0}
+  bountyImage: {fileID: 0}
+  bountyRewardText: {fileID: 0}
+  rewardFromBounty: 0
+  acceptButton: {fileID: 0}
+  targetBounty: {fileID: 0}
+  bountyList:
+  - {fileID: 11400000, guid: df16d8a4b7a8ac24abc61b1623df503c, type: 2}
+  - {fileID: 11400000, guid: cca42117be5eb2f468749953dba61bd8, type: 2}
+  - {fileID: 11400000, guid: 998e3fa60ddd83445bb9365ad9d686f6, type: 2}
 --- !u!114 &114737110917141686
 MonoBehaviour:
   m_ObjectHideFlags: 1
