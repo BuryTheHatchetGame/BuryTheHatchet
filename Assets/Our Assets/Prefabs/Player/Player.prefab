@@ -151,8 +151,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1334760836073546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59, y: -0.141, z: 0}
-  m_LocalScale: {x: 0.5392947, y: 0.5392946, z: 0.5392946}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4452198790958340}
   m_RootOrder: 0
@@ -216,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489956186253980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.613, y: 0, z: 0}
+  m_LocalPosition: {x: 1.55, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4452198790958340}
@@ -245,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690449731439878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.07, y: 2.3, z: 0}
+  m_LocalPosition: {x: 1.03, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4357950544347816}
@@ -359,6 +359,7 @@ MonoBehaviour:
   clipAmount: 0
   fireRate: 0
   reloadTime: 0
+  playerCurrentAmmoAmountText: {fileID: 0}
   bulletSpeed: 10
   divideFloat: 3
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
@@ -378,6 +379,7 @@ MonoBehaviour:
   startHealth: 100
   health: 0
   healthBar: {fileID: 0}
+  respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &114363616379927976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,6 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ebfc30b50148145b510054d35ec241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprite: {fileID: 1171471571900142}
+  revolver: {fileID: 1334760836073546}
   gunPos: {x: 0, y: 0, z: 0}
   mousePos: {x: 0, y: 0}
   angle: 0
@@ -535,7 +539,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3e8ce86a6cd951147afaec9ee355d3c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

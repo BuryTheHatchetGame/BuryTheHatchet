@@ -18,16 +18,15 @@ public class GameManager : MonoBehaviour {
 	public int playerCashAmount;
 	public Text playerCashAmountText;
 
-	private int playerCurrentAmmoAmount;
-	public Text playerCurrentAmmoAmountText;
-
-
 	public GameObject healthPickup;
-	public GameObject ammoPickup;
+	public GameObject coinPickup;
 	public GameObject cashPickup;
 
 	// Use this for initialization
 	void Start () {
+
+        
+        playerCashAmountText.text = "CASH: $" + playerCashAmount.ToString();
 
         gm = GameObject.FindGameObjectWithTag("GameController");
 
@@ -39,9 +38,14 @@ public class GameManager : MonoBehaviour {
 
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    void Update()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		//AddThis ();
 		//Debug.Log (playerCashAmount);
 	}
@@ -63,12 +67,12 @@ public class GameManager : MonoBehaviour {
 //		addCash (cashAmmount);
 //	}
 
-	void bountyAvailableCheck(){
-		if (bountyActive = false) {
-			//bountyAvailable
-		}
+	//void bountyAvailableCheck(){
+	//	if (bountyActive = false) {
+	//		//bountyAvailable
+	//	}
 
-	}
+	//}
 
 	//once this function is called upon, bountyActive = true.
 	public void bountyAccepted(){
@@ -104,8 +108,8 @@ public class GameManager : MonoBehaviour {
 	public void enemyDropped(Vector2 enemyDeathSpot){
 		int randomNum;
 		GameObject healthPack;
-		GameObject ammoPack;
 		GameObject coinPack;
+		GameObject cashPack;
 
 
 		randomNum = Random.Range (1, 3);
@@ -117,15 +121,15 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (randomNum == 2) {
-			ammoPack = Instantiate (ammoPickup, enemyDeathSpot, Quaternion.identity);
-			Debug.Log ("Ammo");
-			Analytics.CustomEvent ("Ammo_Dropped", null);
+			coinPack = Instantiate (coinPickup, enemyDeathSpot, Quaternion.identity);
+			Debug.Log ("Coin");
+			Analytics.CustomEvent ("Coin_Dropped", null);
 		}
 
 		if (randomNum == 3) {
-			coinPack = Instantiate (cashPickup, enemyDeathSpot, Quaternion.identity);
-			Debug.Log ("Coin");
-			Analytics.CustomEvent ("Coin_Dropped", null);
+			cashPack = Instantiate (cashPickup, enemyDeathSpot, Quaternion.identity);
+			Debug.Log ("Cash");
+			Analytics.CustomEvent ("Cash_Dropped", null);
 		}
 
 	}

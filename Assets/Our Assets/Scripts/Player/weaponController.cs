@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class weaponController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class weaponController : MonoBehaviour
     public int clipAmount;
     public int fireRate;
     public int reloadTime;
+
+    public Text playerCurrentAmmoAmountText;
 
     public float bulletSpeed = 10;
 
@@ -41,12 +44,15 @@ public class weaponController : MonoBehaviour
 	void Start ()
     {
         gm = GameObject.FindGameObjectWithTag("GameController");
-        
+
 
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
         fireRate = weapon.weaponFireRate;
         reloadTime = weapon.weaponReloadTime;
+
+        playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
+
 
         //fireRate = 10;
 
@@ -75,6 +81,8 @@ public class weaponController : MonoBehaviour
 
 		TempReload ();
 
+        playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
+
     }
 
     public void ShootGun()
@@ -87,7 +95,8 @@ public class weaponController : MonoBehaviour
             // INSTANTIATE BULLET HERE //
             if (clipAmount > 0)
             {
-                gm.GetComponent<AudioManager>().PlaySound("Shoot");
+                
+                
                 SpawnBullet();
                 Debug.Log("BANG!");
                 clipAmount--;
@@ -107,6 +116,8 @@ public class weaponController : MonoBehaviour
             { 
                 if (clipAmount > 0)
                 {
+                    
+
                     SpawnBullet();
                     Debug.Log("BANG!");
                     clipAmount -= 1;
@@ -121,9 +132,10 @@ public class weaponController : MonoBehaviour
         if (clipAmount <= 0)
         {
             clipAmount = 0;
+            
 
             // SHOW RELOAD UI HERE //
-			reloadText.SetActive(true);
+            reloadText.SetActive(true);
 
             Debug.Log("OUT OF AMMO...");
         }
@@ -195,6 +207,11 @@ public class weaponController : MonoBehaviour
     {
         // DEBUG - REMOVE LATER //
         Debug.Log("Bullet Moving...");
+
+        playerCurrentAmmoAmountText.text = "AMMO: " + clipAmount.ToString();
+
+        // PLAY SHOOTING SOUND //
+        gm.GetComponent<AudioManager>().PlaySound("Shoot");
 
         // Spawn Bullet + Add Force //
         GameObject Bullet = Instantiate(bullet, barrel.transform.position, barrel.transform.rotation) as GameObject;
