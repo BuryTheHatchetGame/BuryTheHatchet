@@ -17,6 +17,8 @@ public class weaponController : MonoBehaviour
     public int fireRate;
     public int reloadTime;
 
+    public bool canReload = true;
+
     public bool shootAllowed = true;
 
     public Text playerCurrentAmmoAmountText;
@@ -173,19 +175,25 @@ public class weaponController : MonoBehaviour
 //    }
 
 	public void TempReload(){
+
+
 		//bool countDownOn;
 		float tempClipAmount;
 		//countDownOn = false;
 
-		if (Input.GetKeyDown (KeyCode.R)) {
+		if ((Input.GetKeyDown (KeyCode.R) && (canReload == true))) 
+        {
 
+           // if (reloadCountDown <= 0)
+            //{
+                tempClipAmount = weapon.weaponClipAmount - clipAmount;
+                tempClipAmount = tempClipAmount / divideFloat;
+                reloadCountDown = tempClipAmount;
+                countDownOn = true;
+            //}
+            canReload = false;
 
-            tempClipAmount = weapon.weaponClipAmount - clipAmount;
-			tempClipAmount = tempClipAmount / divideFloat;
-			reloadCountDown = tempClipAmount;
-			countDownOn = true;
-		
-		}
+        }
 
 		if (countDownOn == true) {
 			reloadText.SetActive (false);
@@ -194,7 +202,7 @@ public class weaponController : MonoBehaviour
 	
 			if (reloadCountDown <= 0) {
 
-                
+               
 
                 // Reload Weapon //
                 Debug.Log ("RELOADING...");
@@ -204,10 +212,12 @@ public class weaponController : MonoBehaviour
 
 				countDownOn = false;
 				Debug.Log (countDownOn);
-		
-			}
+
+                canReload = true;
+            }
 		}
 
+        
 	}
 		
 
