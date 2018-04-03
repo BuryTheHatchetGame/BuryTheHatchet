@@ -100,8 +100,10 @@ public class enemyWeaponController : MonoBehaviour
 
 			if (reloadTimer <= 0) {
 
-				// Reload Weapon //
-				Debug.Log ("RELOADING...");
+                gm.GetComponent<AudioManager>().PlaySound("Reload");
+
+                // Reload Weapon //
+                Debug.Log ("RELOADING...");
 				enemyClipAmount = originalClipAmount;
 
 

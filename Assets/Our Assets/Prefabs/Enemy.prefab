@@ -357,7 +357,7 @@ MonoBehaviour:
   shotTimerMin: 0.4
   shotTimerMax: 1
   countDown: 0
-  reloadTimer: 1.5
+  reloadTimer: 5
   enemyClipAmount: 0
   originalClipAmount: 6
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
