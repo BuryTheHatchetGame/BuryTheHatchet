@@ -398,6 +398,8 @@ MonoBehaviour:
   startingHealth: 100
   health: 0
   bountyBoard: {fileID: 0}
+  bloodEffect: {fileID: 1872141250615756, guid: 0b754e03edea5b14098998df7f08c19f,
+    type: 2}
 --- !u!212 &212032447117267108
 SpriteRenderer:
   m_ObjectHideFlags: 1

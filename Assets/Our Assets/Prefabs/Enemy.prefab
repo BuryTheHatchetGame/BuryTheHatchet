@@ -361,7 +361,7 @@ MonoBehaviour:
   enemyClipAmount: 0
   originalClipAmount: 6
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
-  bulletSpeed: 10
+  bulletSpeed: 12.5
   barrel: {fileID: 1945832105238528}
   eC: {fileID: 114361173294424142}
   playerGO: {fileID: 0}

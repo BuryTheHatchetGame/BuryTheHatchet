@@ -359,10 +359,11 @@ MonoBehaviour:
   clipAmount: 0
   fireRate: 0
   reloadTime: 0
+  canReload: 1
   shootAllowed: 1
   playerCurrentAmmoAmountText: {fileID: 0}
   bulletSpeed: 10
-  divideFloat: 3
+  divideFloat: 1.1
   bullet: {fileID: 1376431743275870, guid: 336264d73c1b12247944fa53fb3f0d2e, type: 2}
   barrel: {fileID: 1489956186253980}
   reloadText: {fileID: 0}
