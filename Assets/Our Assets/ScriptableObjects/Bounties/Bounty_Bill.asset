@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Bounty_Bill
   m_EditorClassIdentifier: 
   bountyName: Buckshot Bill
-  bountyDescription: Last Seen in the South
+  bountyDescription: Last Seen to SouthEast
   bountyImage: {fileID: 21300000, guid: f0bfccf08bf848245bc5d68774d4a709, type: 3}
   bountyRewardAmount: 1000
   bountyTarget: {fileID: 1024260901087842, guid: 72e3614a84f8e9244aec8e6aaec03b11,

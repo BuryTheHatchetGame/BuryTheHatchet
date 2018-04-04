@@ -141,12 +141,13 @@ public class weaponController : MonoBehaviour
         // EMPTY GUN //
         if (Input.GetKeyDown(KeyCode.R) && clipAmount <= 0)
         {
+			reloadText.SetActive(true);
             clipAmount = 0;
 
             //gm.GetComponent<AudioManager>().PlaySound("Reload");
 
             // SHOW RELOAD UI HERE //
-            reloadText.SetActive(true);
+//            reloadText.SetActive(true);
 
             Debug.Log("OUT OF AMMO...");
         }
@@ -178,8 +179,9 @@ public class weaponController : MonoBehaviour
 //    }
 
 	public void TempReload(){
-
-
+		if (clipAmount == 0) {
+			reloadText.SetActive (true);
+		}
 		//bool countDownOn;
 		float tempClipAmount;
 		//countDownOn = false;
