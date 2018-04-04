@@ -17,6 +17,9 @@ public class weaponController : MonoBehaviour
     public int fireRate;
     public int reloadTime;
 
+    public AudioSource audio;
+    public AudioClip[] reloadSounds;
+
     public bool canReload = true;
 
     public bool shootAllowed = true;
@@ -47,8 +50,8 @@ public class weaponController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        audio = GetComponent<AudioSource>();
         gm = GameObject.FindGameObjectWithTag("GameController");
-
 
         damage = weapon.weaponDamageAmount;
         clipAmount = weapon.weaponClipAmount;
@@ -140,7 +143,7 @@ public class weaponController : MonoBehaviour
         {
             clipAmount = 0;
 
-            gm.GetComponent<AudioManager>().PlaySound("Reload");
+            //gm.GetComponent<AudioManager>().PlaySound("Reload");
 
             // SHOW RELOAD UI HERE //
             reloadText.SetActive(true);
@@ -184,9 +187,11 @@ public class weaponController : MonoBehaviour
 		if ((Input.GetKeyDown (KeyCode.R) && (canReload == true))) 
         {
 
-           // if (reloadCountDown <= 0)
+            // if (reloadCountDown <= 0)
             //{
+            
                 tempClipAmount = weapon.weaponClipAmount - clipAmount;
+            ReloadSound();
                 tempClipAmount = tempClipAmount / divideFloat;
                 reloadCountDown = tempClipAmount;
                 countDownOn = true;
@@ -220,7 +225,10 @@ public class weaponController : MonoBehaviour
         
 	}
 		
-
+    void ReloadSound()
+    {
+        audio.PlayOneShot(reloadSounds[clipAmount]);
+    }
 
 
     public void SpawnBullet()

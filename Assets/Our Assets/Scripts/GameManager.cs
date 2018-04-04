@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private AudioManager audioManager;
+
+    public AudioSource ambient;
 
     private GameObject gm;
     private GameObject audioSource;
@@ -27,7 +30,6 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        
         playerCashAmountText.text = "CASH: $" + playerCashAmount.ToString();
 
         gm = GameObject.FindGameObjectWithTag("GameController");
@@ -39,12 +41,9 @@ public class GameManager : MonoBehaviour {
         }
 
 		enemyControllers = GameObject.FindGameObjectsWithTag ("Enemy");
+        
 	}
 
-    void Update()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate () {
@@ -142,4 +141,14 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("MasterScene");
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

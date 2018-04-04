@@ -6,7 +6,7 @@ using UnityEngine.Analytics;
 public class enemyHealthManager : MonoBehaviour
 {
     [Header("Health Variables")]
-    public float startingHealth = 100f;
+    public float startingHealth;
     public float health;
 
 	private GameObject GM;
@@ -33,10 +33,10 @@ public class enemyHealthManager : MonoBehaviour
     {
 		
         // If Health is greater to equal to 100, health equals 100 //
-        if (health >= 100)
-        {
-            health = 100;
-        }
+        //if (health >= startingHealth)
+        //{
+        //    health = startingHealth;
+        //}
 
         if (health <= 0)
         {

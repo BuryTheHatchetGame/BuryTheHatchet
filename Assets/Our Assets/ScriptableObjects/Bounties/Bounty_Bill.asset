@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fddc2ff6e03ddf4ab49a8d8bd9108ee, type: 3}
   m_Name: Bounty_Bill
   m_EditorClassIdentifier: 
-  bountyName: Bill
-  bountyDescription: Catch Him
+  bountyName: Buckshot Bill
+  bountyDescription: Last Seen in the South
   bountyImage: {fileID: 21300000, guid: f0bfccf08bf848245bc5d68774d4a709, type: 3}
-  bountyRewardAmount: 5
+  bountyRewardAmount: 1000
   bountyTarget: {fileID: 1024260901087842, guid: 72e3614a84f8e9244aec8e6aaec03b11,
     type: 2}
   spawnBountyLocation: {x: 16, y: -30, z: 0}
